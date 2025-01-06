@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="./assets/css/output.css">
 </head>
 <body>
-    
+    <h1 class="text-neutral-black font-title">BOOKMAKER</h1>
 </body>
 </html>
