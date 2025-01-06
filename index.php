@@ -8,8 +8,11 @@
 </head>
 <body>
     <head>
-<nav>
-<img src="" alt="">
+<nav class="flex">
+<img class="color-neutral-black" src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger fermé">
+<img src="./assets/src/slider.png" alt="Icone de barres de slide pour lister les catégories">
+<img src="./assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
+<img src="./assets/src/user-round.svg" alt="Icone de connexion">
 
 </nav>
     </head>
