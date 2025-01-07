@@ -1,9 +1,8 @@
 <?php
 try {
 
-
     $host = "localhost";
-    $dbname = "spotifly_td";
+    $dbname = "bookmaker_td";
     $login = "root";
     $password = "";
 
