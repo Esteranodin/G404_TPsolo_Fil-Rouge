@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,20 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOKMAKER</title>
     <link rel="stylesheet" href="./assets/css/output.css">
+    <script defer src="./assets/js/menu_burger.js"></script>
 </head>
 
-<body class="bg-neutral-white">
+<body class="bg-neutral-white text-paragraph font-body">
     <header class="flex flex-col">
 
         <nav class="w-full flex p-4 justify-between">
-            <div class="flex w-3/12 gap-4">
-                <img class="w-8 " src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger fermé">
-                <img class="w-6" src="./assets/src/slider.png" alt="Icone de barres de slide pour lister les catégories">
+            <div class="flex w-3/12 gap-4 items-center">
+
+                <img class="w-8 " id="burgerIcon" src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger fermé"></a>
+                <div class="hidden" id="menuBurger">
+                    <a href="./public/account.php">Mon compte</a>
+                    <a href="./public/account.php">Mon compte</a>
+                    <a href="./public/account.php">Mon compte</a>
+                </div>
+
+                <a href="">
+                    <img class="w-6" src="./assets/src/slider.png" alt="Icone de barres de slide pour lister les catégories"></a>
             </div>
 
-            <div class="w-6/12 flex justify-center">
-                <img class="h-10 self-center" src="./assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
-            </div>
+            <a href="./index.php" class="w-6/12 flex justify-center">
+                <img class="h-10" src="./assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
+            </a>
 
             <div class="w-3/12 flex justify-end">
                 <img src="./assets/src/user-round.svg" alt="Icone de connexion">
@@ -39,7 +46,7 @@
             <form class="relative w-[88%] mx-auto">
                 <input type="search" id="default-search"
                     class="w-full  shadow-lg p-4 ps-6 font-semibold text-paragraph placeholder-primary-grey border-grey-500 rounded-3xl bg-primary-grey/15 focus:ring-primary-blue focus:border-primary-blue"
-                    placeholder="Chercher un livre, un auteur" required />
+                    placeholder="Chercher un livre, un auteur..." required />
 
                 <button type="submit" class="text-primary-grey absolute end-2.5 bottom-1.5 bg-primary-grey/25 hover:bg-neutral-grey focus:ring-2 focus:outline-none focus:ring-primary-pink font-medium rounded-full text-sm p-3 item-center ">
                     <svg class="w-4 h-4 text-primary-pink" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
