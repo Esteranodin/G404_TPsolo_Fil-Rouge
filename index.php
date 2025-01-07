@@ -57,9 +57,13 @@
                     </svg>
                 </button>
             </form>
+        </section>
 
 
+        <div class="w-[260px] h-[260px] bg-primary-yellow">
 
+<h2>Nouveautés</h2>
+        </div>
 
 
 
