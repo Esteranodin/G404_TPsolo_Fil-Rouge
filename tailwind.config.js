@@ -2,7 +2,9 @@
 module.exports = {
   content: [
     "./index.php",
-    "./public/*"
+    "./public/*",
+
+    "./assets/js/*",
   ],
 
   theme: {
