@@ -16,8 +16,9 @@ module.exports = {
           'pink' : 'hsl(332, 100, 64)',
         },
         neutral: {
-          'white': 'hsl(0, 49, 95)',
+          'white': 'hsl(0, 52, 95)',
           'black': 'hsl(0, 0, 7)',
+          'grey' : 'hsl(264, 24, 96)',
         },
       },
 

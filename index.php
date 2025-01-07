@@ -12,13 +12,13 @@
     <header class="flex flex-col">
 
         <nav class="w-full flex p-4 justify-between">
-            <div class="flex w-3/12 gap-2">
-                <img class="w-6 " src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger fermé">
+            <div class="flex w-3/12 gap-4">
+                <img class="w-8 " src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger fermé">
                 <img class="w-6" src="./assets/src/slider.png" alt="Icone de barres de slide pour lister les catégories">
             </div>
 
             <div class="w-6/12 flex justify-center">
-                <img class="h-9 self-center" src="./assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
+                <img class="h-10 self-center" src="./assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
             </div>
 
             <div class="w-3/12 flex justify-end">
@@ -27,28 +27,34 @@
 
         </nav>
 
-        <h1 class="text-neutral-black font-title ">BOOKMAKER</h1>
-
+        <h1 class="text-neutral-black font-title text-2xl font-semibold text-center pt-4 tracking-[0.13em]">BOOKMAKER</h1>
+        <h2 class="text-neutral-black text-center text-xs font-semibold font-title tracking-[0.13em] pb-10">Le meilleur des livres d'occasion</h2>
     </header>
-    <!-- 
-    /* title */
 
-position: absolute;
-width: 240px;
-height: 24px;
-left: calc(50% - 240px/2);
-top: 96px;
+    <main>
+        <!-- SEARCH BAR  -->
+        <section>
+            <form class="relative w-[88%] mx-auto">
+                <input type="search" id="default-search"
+                    class="w-full  shadow-lg p-4 ps-6 font-semibold text-paragraph placeholder-primary-grey border-grey-500 rounded-3xl bg-primary-grey/15 focus:ring-primary-blue focus:border-primary-blue"
+                    placeholder="Chercher un livre, un auteur" required />
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 24px;
-/* identical to box height, or 75% */
-text-align: center;
-letter-spacing: 0.13em;
+                <button type="submit" class="text-primary-grey absolute end-2.5 bottom-1.5 bg-primary-grey/25 hover:bg-neutral-grey focus:ring-2 focus:outline-none focus:ring-primary-pink font-medium rounded-full text-sm p-3 item-center ">
+                    <svg class="w-4 h-4 text-primary-pink" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </button>
 
-color: #000000; -->
+            </form>
+
+
+
+
+
+    </main>
+
+
+
 
 
 </body>
