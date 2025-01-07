@@ -16,12 +16,12 @@
             <div class="flex w-3/12 gap-4 items-center">
 
                 <img class="w-8 cursor-pointer lg:hidden" id="burgerIcon" src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger"></a>
-                <div class=" hidden flex-col gap-4 pt-20 absolute top-0 left-0 bottom-0 bg-neutral-grey p-6 rounded-lg shadow-md lg:hidden" id="menuBurger">
+                <div class=" hidden flex-col gap-4 pt-20 font-title font-medium absolute top-0 left-0 bottom-0 bg-neutral-grey p-6 rounded-lg shadow-md lg:hidden" id="menuBurger">
 
                     <img class="w-8 cursor-pointer absolute top-4 right-4" id="closeIcon" src="./assets/src/close_icon.svg" alt="Icône de fermeture" />
 
                     <a class="" href="./public/account.php">Mon compte</a>
-                    <a href="./public/">Blala</a>
+                    <a href="./public/">Blabla</a>
                     <a href="./public/">bip bip</a>
                 </div>
 

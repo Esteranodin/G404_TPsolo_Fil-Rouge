@@ -20,11 +20,4 @@ function menuDisplay(event) {
         searchBar.classList.toggle('[transform:translateX(30%)]');
     }
 
-    else if (!menuBurger.contains(event.target)) {
-        menuBurger.classList.toggle('hidden');
-        menuBurger.classList.toggle('flex');
-        searchBar.classList.remove('[transform:translateX(30%)]');
-
-    }
-
 };
