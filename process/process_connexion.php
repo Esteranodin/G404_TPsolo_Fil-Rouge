@@ -26,7 +26,7 @@ if (
 // sanitization du pseudo
 
 // $username = htmlspecialchars(trim($_POST['username']));
-// $mdp = $_POST['password'];
+$mdp = $_POST['password'];
 
 
 
@@ -35,42 +35,44 @@ require_once("../utils/connect_db.php");
 
 
 
-// try {
+try {
 
-//     // regarde si c'est mail ou username
-//     $sql = ("SELECT * FROM user WHERE username = :username OR email = :username");
+    // regarde si c'est mail ou username
+    $sql = ("SELECT * FROM user WHERE mail = :mail");
   
-//     $stmt = $pdo->prepare($sql);
-//     $stmt->bindParam(':username', $username);
-//     $stmt->execute();
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':mail', $mail);
+    $stmt->execute();
 
-
+   
+    // On récupère les données de l'user
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-//     // On récupère les données de l'user
-//     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
+    // Regarde si l'utilisateur existe déja, si non, retourne erreur 10
+    if (!$user) {
+        header('Location: ../public/connexion.php?error=10');
+    }
+
+    // vérifie si le mot de passe est le même que le mot de passe hashé
+    if (!password_verify($mdp, $user["password"])) {
+        header('Location: ../public/connexion.php?error=9');
+    }
+
+    // Garde les informations dans une session
+    session_start();
+
+    $_SESSION["user"]["id"] = $user["id"];
+    $_SESSION["user"]["mail"] = $user["mail"];
+    $_SESSION["user"]["role"] = $user["role"];
+    $_SESSION["user"]["lastname"] = $user["lastname"];
+    $_SESSION["user"]["firstname"] = $user["firstname"];
+
+    header('Location: ../public/account.php');
+    exit;
     
-//     // Regarde si l'utilisateur existe déja, si non, retourne erreur 10
-//     if (!$user) {
-//         header('Location: ../public/connexion.php?error=10');
-//     }
-
-//     // vérifie si le mot de passe est le même que le mot de passe hashé
-//     if (!password_verify($mdp, $user["password"])) {
-//         header('Location: ../public/connexion.php?error=9');
-//     }
-
-
-//     // Garde les informations dans une session
-//     session_start();
-
-//     $_SESSION["user"]["username"] = $user["username"];
-//     $_SESSION["user"]["id"] = $user["id"];
-//     $_SESSION["user"]["role"] = $user["role"];
-//     header('Location: ../public/homepage.php');
-//     exit;
-// } catch (PDOException $error) {
-//     echo "Erreur lors de la requête : " . $error->getMessage();
-//     exit;
-// }
+} catch (PDOException $error) {
+    echo "Erreur lors de la requête : " . $error->getMessage();
+    exit;
+}
 // ?>

@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+session_start();
 
 // Pour chemin absolu
 // $basePath = $_SERVER['DOCUMENT_ROOT'] . '/wamp_G404/G404_TPsolo_Fil-Rouge';

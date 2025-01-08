@@ -9,7 +9,7 @@
     <script defer src="./assets/js/menu_burger.js"></script>
 </head>
 
-<body class="bg-neutral-white text-paragraph font-body">
+<body class="bg-neutral-white-off text-paragraph font-body">
     <header class="flex flex-col">
 
         <nav class="w-full flex p-4 justify-between">
@@ -33,11 +33,9 @@
                 <img class="h-10" src="./assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
             </a>
 
-                <a class="w-3/12 flex justify-end" href="./public/connexion.php">
-               <img src="./assets/src/user-round.svg" alt="Icone de connexion">
-               </a>
-       
-
+            <a class="w-3/12 flex justify-end" href="./public/connexion.php">
+                <img src="./assets/src/user-round.svg" alt="Icone de connexion">
+            </a>
         </nav>
 
         <h1 class="text-neutral-black font-title text-2xl font-semibold text-center pt-4 tracking-[0.13em]">BOOKMAKER</h1>
@@ -49,7 +47,7 @@
         <section>
             <form class="relative w-[88%] mx-auto">
                 <input type="search" id="searchBar"
-                    class="w-full  shadow-lg p-4 ps-6 font-semibold text-paragraph placeholder-primary-grey border-grey-500 rounded-3xl bg-primary-grey/15 focus:ring-primary-blue focus:border-primary-blue"
+                    class="w-full shadow-lg p-4 ps-6 font-semibold text-paragraph placeholder-primary-grey border-primary-grey rounded-3xl bg-primary-grey/15 focus:ring-primary-blue focus:border-primary-blue"
                     placeholder="Chercher un livre, un auteur..." required />
 
                 <button type="submit" class="text-primary-grey absolute end-2.5 bottom-1.5 bg-primary-grey/25 hover:bg-neutral-grey focus:ring-2 focus:outline-none focus:ring-primary-pink font-medium rounded-full text-sm p-3 item-center ">
@@ -71,7 +69,7 @@
 
         <section class="w-[93%] place-self-center">
             <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
-                <p class="text-neutral-white">prix €</p>
+                <p class="text-neutral-white-off">prix €</p>
             </div>
 
             <article class="flex flex-col my-12 place-self-center h-contain rounded-md bg-primary-blue/15 shadow-md font-body text-paragraph">
@@ -87,13 +85,13 @@
                     </div>
                 </div>
                 <div class="flex flex-row ml-16 my-4 gap-5 ">
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">HIST.</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">SF</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">LGBT+</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">HIST.</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">SF</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">LGBT+</p>
                 </div>
             </article>
             <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
-                <p class="text-neutral-white">prix €</p>
+                <p class="text-neutral-white-off">prix €</p>
             </div>
             <article class="flex flex-col my-12  place-self-center h-contain rounded-md bg-primary-pink/15 shadow-md font-body text-paragraph">
                 <div class="flex gap-4">
@@ -108,13 +106,13 @@
                     </div>
                 </div>
                 <div class="flex flex-row ml-16 my-4 gap-5 ">
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">HIST.</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">SF</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">LGBT+</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">HIST.</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">SF</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">LGBT+</p>
                 </div>
             </article>
             <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
-                <p class="text-neutral-white">prix €</p>
+                <p class="text-neutral-white-off">prix €</p>
             </div>
             <article class="flex flex-col my-12  place-self-center h-contain rounded-md bg-primary-blue/15 shadow-md font-body text-paragraph">
                 <div class="flex gap-4">
@@ -129,9 +127,9 @@
                     </div>
                 </div>
                 <div class="flex flex-row ml-16 my-4 gap-5 ">
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">HIST.</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">SF</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">LGBT+</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">HIST.</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">SF</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">LGBT+</p>
                 </div>
             </article>
         </section>

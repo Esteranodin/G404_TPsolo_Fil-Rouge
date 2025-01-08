@@ -4,4 +4,6 @@ Si le temsp pedt refactorisation :
     - script pour hidden les éléments du header suivant endroit où l'on se trouve, comme icone de connexion sur page de connexion
 
 
+Améliorer design nav barre comme grosseur logo > au reste + rond
+
 penser a merge le main sur de branches que je retravaille dessus
