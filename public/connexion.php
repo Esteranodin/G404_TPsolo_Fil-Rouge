@@ -52,9 +52,38 @@ require_once("./components/header.php");
     </footer>
 
 
+        <!-- Erreurs -->
 
+        <?php
+        if (isset($_GET["error"])) {
+        ?>
+            <p class="text-center text-xl font-semibold text-red-500">
 
+            <?php
+
+switch ($_GET["error"]) {
+ 
+    case 'takenMail':
+        ?> Votre compte existe déjà, veuillez vous connectez<?php
+        break;
+    case 'invalidRequest':
+            ?> Erreur : requête invalide (mauvaise méthode HTTP) <?php
+        break;
+    case 'removedInput':
+            ?> Erreur : un ou plusieurs champs sont manquants...<?php
+        break;
+    case 'emptyInputs':
+            ?> Erreur : vous n'avez pas tout rempli <?php
+        break;
+    case 'undefineAccount':
+            ?> Votre compte n'existe pas, veuillez en créér un en cliquant sur le bouton inscrivez-vous<?php
+        break;
+    default:
+        break; 
+}}
+?>              
 
 </body>
+
 
 </html>

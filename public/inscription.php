@@ -51,7 +51,7 @@ require_once("./components/header.php");
         <?php
         if (isset($_GET["error"])) {
         ?>
-            <p class="text-center text-red-500">
+            <p class="text-center text-xl font-semibold text-red-500">
 
             <?php
 

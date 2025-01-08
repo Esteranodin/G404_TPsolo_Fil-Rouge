@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="./assets/css/output.css">
     <script defer src="./assets/js/menu_burger.js"></script>
 </head>
-
 <body class="bg-neutral-white-off text-paragraph font-body">
+ 
     <header class="flex flex-col">
 
-        <nav class="w-full flex p-4 justify-between">
+        <nav class="flex p-4 justify-between">
             <div class="flex w-3/12 gap-4 items-center">
 
-                <img class="w-8 cursor-pointer lg:hidden" id="burgerIcon" src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger"></a>
+                <img class="cursor-pointer lg:hidden" id="burgerIcon" src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger"></a>
+               
                 <div class=" hidden flex-col gap-4 pt-20 font-title font-medium absolute top-0 left-0 bottom-0 bg-neutral-grey p-6 rounded-lg shadow-md lg:hidden" id="menuBurger">
 
                     <img class="w-8 cursor-pointer absolute top-4 right-4" id="closeIcon" src="./assets/src/close_icon.svg" alt="Icône de fermeture" />
@@ -37,9 +38,10 @@
                 <img src="./assets/src/user-round.svg" alt="Icone de connexion">
             </a>
         </nav>
-
-        <h1 class="text-neutral-black font-title text-2xl font-semibold text-center pt-4 tracking-[0.13em]">BOOKMAKER</h1>
-        <h2 class="text-neutral-black text-center text-xs font-semibold font-title tracking-[0.13em] pb-10">Le meilleur des livres d'occasion</h2>
+        <div>
+            <h1 class="text-neutral-black font-title text-2xl font-semibold text-center pt-4 tracking-[0.13em]">BOOKMAKER</h1>
+            <h2 class="text-neutral-black text-center text-xs font-semibold font-title tracking-[0.13em] pb-10">Le meilleur des livres d'occasion</h2>
+        </div>
     </header>
 
     <main>
@@ -69,7 +71,7 @@
 
         <section class="w-[93%] place-self-center">
             <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
-                <p class="text-neutral-white-off">prix €</p>
+                <p class="text-neutral-white-off font-medium">prix €</p>
             </div>
 
             <article class="flex flex-col my-12 place-self-center h-contain rounded-md bg-primary-blue/15 shadow-md font-body text-paragraph">
@@ -85,13 +87,13 @@
                     </div>
                 </div>
                 <div class="flex flex-row ml-16 my-4 gap-5 ">
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">HIST.</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">SF</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">LGBT+</p>
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">HIST.</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">SF</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">LGBT+</p>
                 </div>
             </article>
             <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
-                <p class="text-neutral-white-off">prix €</p>
+                <p class="text-neutral-white-off font-medium">prix €</p>
             </div>
             <article class="flex flex-col my-12  place-self-center h-contain rounded-md bg-primary-pink/15 shadow-md font-body text-paragraph">
                 <div class="flex gap-4">
@@ -106,13 +108,13 @@
                     </div>
                 </div>
                 <div class="flex flex-row ml-16 my-4 gap-5 ">
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">HIST.</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">SF</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">LGBT+</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">HIST.</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">SF</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">LGBT+</p>
                 </div>
             </article>
             <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
-                <p class="text-neutral-white-off">prix €</p>
+                <p class="text-neutral-white-off font-medium">prix €</p>
             </div>
             <article class="flex flex-col my-12  place-self-center h-contain rounded-md bg-primary-blue/15 shadow-md font-body text-paragraph">
                 <div class="flex gap-4">
@@ -127,32 +129,17 @@
                     </div>
                 </div>
                 <div class="flex flex-row ml-16 my-4 gap-5 ">
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">HIST.</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">SF</p>
-                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center">LGBT+</p>
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">HIST.</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">SF</p>
+                    <p class="bg-primary-pink rounded-[60px] text-neutral-white-off py-1 px-6 text-center font-medium">LGBT+</p>
                 </div>
             </article>
         </section>
 
-
-
-
-
-        <!-- position: absolute;
-left: 19.44%;
-right: 60%;
-top: 84.74%;
-bottom: 4.42%;
-
-background: #FF499E;
-border-radius: 60px; -->
-
-
-
-
-
     </main>
+            
 
 </body>
 
+     
 </html>

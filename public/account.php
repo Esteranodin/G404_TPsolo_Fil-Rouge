@@ -24,8 +24,8 @@ try {
 
 <div class="p-4 text-center">
 
-        <h3 class="text-lg font-bold mb-1"><?= $user["firstname"]?></h3>
-
+        <!-- <h3 class="text-lg font-bold mb-1"><?= $user['mail']?></h3> -->
+<p>Connexion réussie et faire tout le reste ^^</p>
     </div>
 
     <footer>

@@ -2,7 +2,7 @@
 
 // empêche de changer la requete en GET
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../index.php');
+    header('Location: ../public/connexion.php?error=invalidRequest');
     exit;
 }
 
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 if (
     !isset($_POST['mail'], $_POST['password'])
 ) {
-    header('Location: ../index.php?error=1');
+    header('Location: ../public/connexion.php?error=removedInput');
     exit;
 }
 
@@ -19,27 +19,22 @@ if (
     empty($_POST['mail']) ||
     empty($_POST['password'])
 ) {
-    header('Location: ../index.php?error=2');
+    header('Location: ../public/connexion.php?error=emptyInputs');
     exit;
 }
 
-// sanitization du pseudo
-
-// $username = htmlspecialchars(trim($_POST['username']));
+// declaration variable pour requête ultérieure
+$mail = $_POST['mail'];
 $mdp = $_POST['password'];
-
 
 
 // CONNECTION à la base de données
 require_once("../utils/connect_db.php");
 
 
-
 try {
-
-    // regarde si c'est mail ou username
     $sql = ("SELECT * FROM user WHERE mail = :mail");
-  
+ 
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':mail', $mail);
     $stmt->execute();
@@ -49,9 +44,9 @@ try {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     
-    // Regarde si l'utilisateur existe déja, si non, retourne erreur 10
+    // Regarde si l'utilisateur n'existe pas
     if (!$user) {
-        header('Location: ../public/connexion.php?error=10');
+        header('Location: ../public/connexion.php?error=undefineAccount');
     }
 
     // vérifie si le mot de passe est le même que le mot de passe hashé
