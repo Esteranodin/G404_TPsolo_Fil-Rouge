@@ -15,28 +15,33 @@ module.exports = {
           'yellow': 'hsl(53, 100, 70)',
           'blue': 'hsl(176, 67, 40)',
           'grey': 'hsl(0, 0, 20)',
-          'pink' : 'hsl(332, 100, 64)',
+          'pink': 'hsl(332, 100, 64)',
         },
         neutral: {
           'white': 'hsl(0, 52, 95)',
           'black': 'hsl(0, 0, 7)',
-          'grey' : 'hsl(264, 24, 96)',
+          'grey': 'hsl(264, 24, 96)',
+        },
+        shadow: {
+          'filter': 'rgba(0, 0, 0, 0.25)',
+        },
+        border: {
+          'grey': 'rgba(85, 85, 85, 0.15)',
+        },
+
+        fontSize: {
+          title: '30px',
+          paragraph: '15px',
+        },
+
+        fontFamily: {
+          'title': ['Inter'],
+          'body': ['Roboto'],
         },
       },
 
-      fontSize: {
-        title: '30px',
-        paragraph: '15px',
-      },
-
-      fontFamily: {
-        'title': ['Inter'],
-        'body': ['Roboto'],
-      },
     },
 
+    plugins: [],
   },
-  
-  plugins: [],
 }
-

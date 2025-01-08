@@ -59,20 +59,100 @@
             </form>
         </section>
 
+        <section class="mt-10">
 
-        <div class="w-[260px] h-[260px] bg-primary-yellow">
+            <div class="w-[260px] h-[260px] bg-primary-yellow/85 place-self-center shadow-md">
 
-<h2>Nouveautés</h2>
-        </div>
+                <h2 class="font-title text-xl font-extrabold pt-4 pb-2 pl-4 ">Nouveautés</h2>
+                <hr class="border-2 border-primary-blue w-[199px] ml-10">
+            </div>
+        </section>
+
+        <section class="w-[93%] place-self-center">
+    <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
+        <p class="text-neutral-white">prix €</p>
+    </div>
+
+        <article class="flex flex-col my-12 place-self-center h-contain rounded-md bg-primary-blue/15 shadow-md font-body text-paragraph">
+            <div class="flex gap-4">
+                <div class="box-border w-[40%] mt-12 ml-4 border-[1px] border-border-grey bg-shadow-filter rounded-md shadow-md">
+                    <img src="" alt="Couverture du livre" class="object-cover">
+                </div>
+
+                <div class="flex flex-col w-[50%]">
+                    <h2 class="font-title text-lg font-medium pt-4 pb-2">balise php nom auteur</h2>
+                    <h3 class="font-title text-lg font-medium pt-4 pb-2">balise php titre livre</h3>
+                    <p>Integer eget ante dui. Aliquam varius pulvinar dignissim. Proin quis orci rhoncus, rhoncus libero quis, tincidunt mauris. Fusce quis luctus orci. Aenean sodales at nisl vel vehicula. Fusce scelerisque enim a volutpat a.</p>
+                </div>
+            </div>
+            <div class="flex flex-row ml-16 my-4 gap-5 ">
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">HIST.</p>
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">SF</p>
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">LGBT+</p>            
+            </div>
+        </article>
+    <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
+        <p class="text-neutral-white">prix €</p>
+    </div>
+        <article class="flex flex-col my-12  place-self-center h-contain rounded-md bg-primary-pink/15 shadow-md font-body text-paragraph">
+            <div class="flex gap-4">
+                <div class="box-border w-[40%] mt-12 ml-4 border-[1px] border-border-grey bg-shadow-filter rounded-md shadow-md">
+                    <img src="" alt="Couverture du livre" class="object-cover">
+                </div>
+
+                <div class="flex flex-col w-[50%]">
+                    <h2 class="font-title text-lg font-medium pt-4 pb-2">balise php nom auteur</h2>
+                    <h3 class="font-title text-lg font-medium pt-4 pb-2">balise php titre livre</h3>
+                    <p>Integer eget ante dui. Aliquam varius pulvinar dignissim. Proin quis orci rhoncus, rhoncus libero quis, tincidunt mauris. Fusce quis luctus orci. Aenean sodales at nisl vel vehicula. Fusce scelerisque enim a volutpat a.</p>
+                </div>
+            </div>
+            <div class="flex flex-row ml-16 my-4 gap-5 ">
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">HIST.</p>
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">SF</p>
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">LGBT+</p>            
+            </div>
+        </article>
+    <div class="absolute ml-4 p-3 -mt-6 bg-neutral-black rounded-tl-lg rounded-br-lg">
+        <p class="text-neutral-white">prix €</p>
+    </div>
+        <article class="flex flex-col my-12  place-self-center h-contain rounded-md bg-primary-blue/15 shadow-md font-body text-paragraph">
+            <div class="flex gap-4">
+                <div class="box-border w-[40%] mt-12 ml-4 border-[1px] border-border-grey bg-shadow-filter rounded-md shadow-md">
+                    <img src="" alt="Couverture du livre" class="object-cover">
+                </div>
+
+                <div class="flex flex-col w-[50%]">
+                    <h2 class="font-title text-lg font-medium pt-4 pb-2">balise php nom auteur</h2>
+                    <h3 class="font-title text-lg font-medium pt-4 pb-2">balise php titre livre</h3>
+                    <p>Integer eget ante dui. Aliquam varius pulvinar dignissim. Proin quis orci rhoncus, rhoncus libero quis, tincidunt mauris. Fusce quis luctus orci. Aenean sodales at nisl vel vehicula. Fusce scelerisque enim a volutpat a.</p>
+                </div>
+            </div>
+            <div class="flex flex-row ml-16 my-4 gap-5 ">
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">HIST.</p>
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">SF</p>
+                <p class="bg-primary-pink rounded-[60px] text-neutral-white py-1 px-6 text-center">LGBT+</p>            
+            </div>
+        </article>
+        </section>
+
+
+
+
+
+        <!-- position: absolute;
+left: 19.44%;
+right: 60%;
+top: 84.74%;
+bottom: 4.42%;
+
+background: #FF499E;
+border-radius: 60px; -->
+
 
 
 
 
     </main>
-
-
-
-
 
 </body>
 
