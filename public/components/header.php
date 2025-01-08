@@ -1,28 +1,42 @@
-<!-- <?php 
-session_start();
+<?php 
+// session_start();
 
 // Pour chemin absolu
-$basePath = rtrim(dirname($_SERVER['PHP_SELF']), '/');
-?> -->
+// $basePath = $_SERVER['DOCUMENT_ROOT'] . '/wamp_G404/G404_TPsolo_Fil-Rouge';
+
+
+?>
 
 <header class="flex flex-col">
 
-        <nav class="w-full flex p-4 justify-between">
-            <div class="flex w-3/12 gap-4">
-                <img class="w-8 " src="./assets/src/menu_burger.svg" alt="Icone d'un menu burger fermé">
-                <img class="w-6" src="./assets/src/slider.png" alt="Icone de barres de slide pour lister les catégories">
-            </div>
+<nav class="w-full flex p-4 justify-between">
+    <div class="flex w-3/12 gap-4 items-center">
 
-            <a href="./index.php" class="w-6/12 flex justify-center">
-                <img class="h-10 self-center" src="./assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
-            </a>
+        <img class="w-8 cursor-pointer lg:hidden" id="burgerIcon" src="../assets/src/menu_burger.svg" alt="Icone d'un menu burger"></a>
+        <div class=" hidden flex-col gap-4 pt-20 font-title font-medium absolute top-0 left-0 bottom-0 bg-neutral-grey p-6 rounded-lg shadow-md lg:hidden" id="menuBurger">
 
-            <div class="w-3/12 flex justify-end">
-                <img src="./assets/src/user-round.svg" alt="Icone de connexion">
-            </div>
+            <img class="w-8 cursor-pointer absolute top-4 right-4" id="closeIcon" src="../assets/src/close_icon.svg" alt="Icône de fermeture" />
 
-        </nav>
+            <a class="" href="">Mon compte</a>
+            <a href="">Blabla</a>
+            <a href="">bip bip</a>
+        </div>
 
-        <h1 class="text-neutral-black font-title text-2xl font-semibold text-center pt-4 tracking-[0.13em]">BOOKMAKER</h1>
-        <h2 class="text-neutral-black text-center text-xs font-semibold font-title tracking-[0.13em] pb-10">Le meilleur des livres d'occasion</h2>
-    </header>
+        <a href="">
+            <img class="w-6" src="../assets/src/slider.png" alt="Icone de barres de slide pour lister les catégories"></a>
+    </div>
+
+    <a href="../index.php" class="w-6/12 flex justify-center">
+        <img class="h-10" src="../assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
+    </a>
+
+        <a class="w-3/12 flex justify-end" href="./public/connexion.php">
+       <img src="../assets/src/user-round.svg" alt="Icone de connexion">
+       </a>
+
+
+</nav>
+
+<h1 class="text-neutral-black font-title text-2xl font-semibold text-center pt-4 tracking-[0.13em]">BOOKMAKER</h1>
+<h2 class="text-neutral-black text-center text-xs font-semibold font-title tracking-[0.13em] pb-10">Le meilleur des livres d'occasion</h2>
+</header>

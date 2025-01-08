@@ -1,3 +1,7 @@
-modales pour connexion et une pour inscription
+Si le temsp pedt refactorisation :
 
-penser a merge le main sur de branches que je retravaille
+    - modales pour connexion et une pour inscription au lieu de page dédiée
+    - script pour hidden les éléments du header suivant endroit où l'on se trouve, comme icone de connexion sur page de connexion
+
+
+penser a merge le main sur de branches que je retravaille dessus
