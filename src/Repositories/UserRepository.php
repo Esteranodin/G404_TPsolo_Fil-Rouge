@@ -69,4 +69,25 @@ final class UserRepository extends DatabaseRepository
         }
     }
 
+
+    public function modifiedAccount(User $user): void
+    {
+        try {
+            $sql = "UPDATE `user` SET `mail`=':mail',`password`=':mdp',`lastname`=':lastname',`firstname`=':firstname'";
+            // Hashage du mot de passe pour la sécurité
+            $user->setPassword(password_hash($user->getPassword(), PASSWORD_BCRYPT));
+            
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                ':mail' => $user->getMail(),
+                ':mdp' => $user->getPassword(),
+                ':lastname' => $user->getLastname(),
+                ':firstname' => $user->getFirstname()
+            ]);
+        } catch (PDOException $error) {
+            echo "Erreur lors de la requête : " . $error->getMessage();
+            exit;
+        }
+    }
+
 }

@@ -17,15 +17,15 @@ if (
 }
 
 // empêche de valider des champs vides
-if (
-    empty($_POST['lastname']) ||
-    empty($_POST['firstname']) ||
-    empty($_POST['mail']) ||
-    empty($_POST['password'])
-) {
-    header('Location: ../public/inscription.php?error=emptyInputs');
-    exit;
-}
+// if (
+//     empty($_POST['lastname']) ||
+//     empty($_POST['firstname']) ||
+//     empty($_POST['mail']) ||
+//     empty($_POST['password'])
+// ) {
+//     header('Location: ../public/inscription.php?error=emptyInputs');
+//     exit;
+// }
 
 // Sanitization
 $lastname = htmlspecialchars(trim($_POST['lastname']));
@@ -60,7 +60,7 @@ if ($userRepo->checkMailExist($mail)) {
 
 $user = new User($mail, $mdp, $lastname, $firstname);
 
-$userRepo->createAccount($user);
+$userRepo->modifiedAccount($user);
 
 header('Location: ../public/homepage.php?success=newAccount');
 exit;

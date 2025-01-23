@@ -4,10 +4,20 @@ require_once("./components/header.php");
 ?>
 
 <body class="bg-neutral-white-off font-body text-paragraph">
+    
+<main>  
 
-<main>
+ <!-- Messages a retravailler -->
+
+    <?php if (isset($_GET["success"])) { ?> <p class="text-center text-xl font-black text-green-600 p-8"> <?php 
+        switch ($_GET["success"]) {
+        case 'newAccount': ?> Votre compte a bien été créé ! <?php
+        break; }
+        } ?>
+
+
     <!-- SEARCH BAR  -->
-    <section>
+<section>
         <form class="relative w-[88%] mx-auto">
             <input type="search" id="searchBar"
                 class="w-full shadow-lg p-4 ps-6 font-semibold text-paragraph placeholder-primary-grey border-primary-grey rounded-3xl bg-primary-grey/15 focus:ring-primary-blue focus:border-primary-blue"
@@ -99,8 +109,10 @@ require_once("./components/header.php");
 
 </main>
 
+<footer>
+
+</footer>
 
 </body>
-
 
 </html>

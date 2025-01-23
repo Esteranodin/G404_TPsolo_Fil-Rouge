@@ -6,11 +6,11 @@ require_once("./components/header.php");
 ?>
 
 
-<body class="bg-neutral-white-off text-paragraph font-body">
+<body class="bg-neutral-white-off font-body text-paragraph">
 
     <main>
 
-        <section>
+    <section class="ml-8">
             <h2 class="text-primary-blue font-title text-2xl font-bold pt-4 pb-4 pl-4">Remplissez les champs suivants</h2>
             <hr class="border-2 border-primary-blue w-full ml-16">
 
@@ -46,14 +46,10 @@ require_once("./components/header.php");
 
         </section>
 
-        <!-- Erreurs -->
+        <!-- Erreurs a retravailler -->
 
-        <?php
-        if (isset($_GET["error"])) {
-        ?>
-            <p class="text-center text-xl font-semibold text-red-500">
-
-            <?php
+<?php
+if (isset($_GET["error"])) {?> <p class="text-center text-xl font-semibold text-red-500"> <?php
 
 switch ($_GET["error"]) {
     case 'invalidRequest':
@@ -83,7 +79,10 @@ switch ($_GET["error"]) {
 ?>              
 
     </main>
+    
+    <footer>
 
+    </footer>
 </body>
 
 </html>

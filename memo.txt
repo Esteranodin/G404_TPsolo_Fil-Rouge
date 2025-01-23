@@ -16,3 +16,15 @@ Prix passe dessus menu burger => en absolu ?
 FAIRE COMPOSANTS pour :
     -> card
 
+
+esteranodin@hotmail.fr
+
+benny@gmail.com
+
+laloutre@gmail.com
+
+
+TO DOING : 
+modification (passer par session ? ) et regarder les redirections !
+
+faire tous les composants qui demande si session pour avoir des pages différenciées ?
