@@ -1,4 +1,4 @@
-Si le temsp pedt refactorisation :
+Si le temsp pndt refactorisation :
 
     - modales pour connexion et une pour inscription au lieu de page dédiée
     - script pour hidden les éléments du header suivant endroit où l'on se trouve, comme icone de connexion sur page de connexion
