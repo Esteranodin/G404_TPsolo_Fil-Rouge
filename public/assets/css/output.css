@@ -939,6 +939,14 @@ video {
   text-align: center;
 }
 
+.font-body{
+  font-family: Roboto;
+}
+
+.font-title{
+  font-family: Inter;
+}
+
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
@@ -947,6 +955,10 @@ video {
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-paragraph{
+  font-size: 15px;
 }
 
 .text-sm{

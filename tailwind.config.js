@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./index.php",
-    "./public/*",
-
+    "./public/**",
     "./assets/js/*",
   ],
 
@@ -30,17 +28,17 @@ module.exports = {
           'grey': 'rgba(85, 85, 85, 0.15)',
         },
 
-        fontSize: {
-          title: '30px',
-          paragraph: '15px',
-        },
-
-        fontFamily: {
-          'title': ['Inter'],
-          'body': ['Roboto'],
-        },
+      },
+      
+      fontSize: {
+        'title': '30px',
+        'paragraph': '15px',
       },
 
+      fontFamily: {
+        'title': ['Inter'],
+        'body': ['Roboto'],
+      },
     },
 
     plugins: [],

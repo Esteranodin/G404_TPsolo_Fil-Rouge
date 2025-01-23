@@ -1,5 +1,7 @@
 <?php
 
+// Process de secu a passer en POO via un objet ValidaroService par exemple
+
 // empêche de changer la requete en GET
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../public/inscription.php?error=invalidRequest');
@@ -37,51 +39,28 @@ if (strlen($mail) > 35 || strlen($mdp) > 50) {
     exit;
 }
 
-// Sanitize Email
+// Verification email conforme vie regex
 if (!preg_match('/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]/', $mail)) {
     header('Location: ../public/inscription.php?error=incorrectMail');
     exit;
 }
 
-// CONNECTION à la base de données
-require_once("../utils/connect_db.php");
 
+// POO
 
-try {
-    // Vérification si l'email existe déjà
-    $checkSql = "SELECT mail FROM `user` WHERE `mail` = :mail";
-    $stmt = $pdo->prepare($checkSql);
-    $stmt->execute([
-        ':mail' => $_POST['mail']
-    ]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    if ($user) {
-        // Si un utilisateur est trouvé, redirige sur connexion
-        if ($user['mail'] === $mail) {
-            header('Location: ../public/connexion.php?error=takenMail');
-            exit();
-        }
-    }
-       
-    $sql = "INSERT INTO `user`(`mail`, `password`, `lastname`, `firstname`) VALUES (:mail, :mdp, :lastname, :firstname)";
-    // Hashage du mot de passe pour la sécurité
-    $hashedMdp = password_hash($mdp, PASSWORD_BCRYPT);
-    $stmt = $pdo->prepare($sql);
-   
-    $stmt->execute([
-        ':mail' => $mail,
-        ':mdp' => $hashedMdp,
-        ':lastname' => $lastname,
-        ':firstname' => $firstname
-    ]);
-       
-    header('Location: ../index.php?success=newAccount');
-    exit;
+require_once '../utils/autoloader.php';
 
-} catch (PDOException $error) {
-    echo "Erreur lors de la requête : " . $error->getMessage();
-    exit;
+$userRepo = new UserRepository();
+
+// Vérifie si le mail exixte et donc est déjà utilisé
+if ($userRepo->checkMailExist($mail)) {
+    header('Location: ../public/connexion.php?error=takenMail');
+    exit();
 }
 
-?>
+$user = new User($mail, $mdp, $lastname, $firstname);
+
+$userRepo->createAccount($user);
+
+header('Location: ../index.php?success=newAccount');
+exit;

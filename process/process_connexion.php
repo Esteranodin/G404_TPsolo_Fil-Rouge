@@ -23,51 +23,33 @@ if (
     exit;
 }
 
-// declaration variable pour requête ultérieure
+// declaration variable pour ensuite
 $mail = $_POST['mail'];
 $mdp = $_POST['password'];
 
+// POO
 
-// CONNECTION à la base de données
-require_once("../utils/connect_db.php");
+require_once '../utils/autoloader.php';
 
+$userRepo = new UserRepository();
 
-try {
-    $sql = ("SELECT * FROM user WHERE mail = :mail");
- 
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':mail', $mail);
-    $stmt->execute();
-
-   
-    // On récupère les données de l'user
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    
-    // Regarde si l'utilisateur n'existe pas
-    if (!$user) {
-        header('Location: ../public/connexion.php?error=undefineAccount');
-    }
-
-    // vérifie si le mot de passe est le même que le mot de passe hashé
-    if (!password_verify($mdp, $user["password"])) {
-        header('Location: ../public/connexion.php?error=9');
-    }
-
-    // Garde les informations dans une session
-    session_start();
-
-    $_SESSION["user"]["id"] = $user["id"];
-    $_SESSION["user"]["mail"] = $user["mail"];
-    $_SESSION["user"]["role"] = $user["role"];
-    $_SESSION["user"]["lastname"] = $user["lastname"];
-    $_SESSION["user"]["firstname"] = $user["firstname"];
-
-    header('Location: ../public/account.php');
-    exit;
-    
-} catch (PDOException $error) {
-    echo "Erreur lors de la requête : " . $error->getMessage();
-    exit;
+if (!$userRepo->checkMailExist($mail)) {
+    header('Location: ../public/connexion.php?error=undefineAccount');
+    exit();
 }
-// ?>
+
+// Vérifie si le mot de passe est le même que le mot de passe hashé
+$user = $userRepo->checkPassword($mail, $mdp);
+
+if (!$user) {
+    header('Location: ../public/connexion.php?error=passwordIncorrect');
+    exit();
+}
+
+// Garde les informations dans une session
+session_start();
+
+$_SESSION["user"] = $user;
+
+header('Location: ../public/account.php');
+exit;

@@ -4,12 +4,15 @@ Si le temsp pndt refactorisation :
     - script pour hidden les éléments du header suivant endroit où l'on se trouve, comme icone de connexion sur page de connexion
 
 
-UI pour dire inscription réussie + erreurs du file connexion
-
-ATTENTION : connexion ne prend pas en compte le mot de passe
-
-Faire attention aux police pas de partout
+UI pour dire inscription réussie + erreurs sur connexion.php
 
 Améliorer design nav barre comme grosseur logo > au reste + rond
 
-penser a merge le main sur de branches que je retravaille dessus
+Faire attention aux police pas de partout
+
+Prix passe dessus menu burger => en absolu ?
+
+
+FAIRE COMPOSANTS pour :
+    -> card
+

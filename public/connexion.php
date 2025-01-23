@@ -78,6 +78,9 @@ switch ($_GET["error"]) {
     case 'undefineAccount':
             ?> Votre compte n'existe pas, veuillez en créér un en cliquant sur le bouton inscrivez-vous<?php
         break;
+    case 'passwordIncorrect':
+            ?> Votre mot de passe ne correspond pas<?php
+        break;
     default:
         break; 
 }}

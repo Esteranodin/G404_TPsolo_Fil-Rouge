@@ -11,7 +11,7 @@ require_once("./components/header.php");
     <main>
 
         <section>
-            <h2 class="text-primary-blue font-title text-2xl font-bold pt-4 pb-4 pl-4">Remplissez le formulaire suivant</h2>
+            <h2 class="text-primary-blue font-title text-2xl font-bold pt-4 pb-4 pl-4">Remplissez les champs suivants</h2>
             <hr class="border-2 border-primary-blue w-full ml-16">
 
             <div class="pt-10 pb-2 pl-4">

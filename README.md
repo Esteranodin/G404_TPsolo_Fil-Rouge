@@ -31,4 +31,4 @@ Prêt(e) à plonger ? Let’s go ! 🚀
   
 Ce fil rouge te permettra de comprendre chaque étape d'un projet et de te préparer à créer des applications de A à Z. 🚀
 
-[Le sujet ici](./sujet.md)
+[Le sujet ici](./SUJET_TD.md)
