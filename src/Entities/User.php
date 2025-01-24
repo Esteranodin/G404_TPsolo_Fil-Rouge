@@ -1,26 +1,35 @@
 <?php
-// si lancer de dés alors résultat donne une attaque différente qui eneleve plus ou moins de pv
 
 class User
 {
     // Propriétés
-
+    private ?int $id;
     private string $mail;
     private string $mdp;
     private string $lastname;
     private string $firstname;
+    private ?UserPro $userPro;
+
+    // private string $role;
 
     // Méthode magique
 
-    public function __construct(string $mail, string $mdp, string $lastname, string $firstname)
+    public function __construct(string $mail, string $mdp, string $lastname, string $firstname, ?int $id = null, ?UserPro $userPro = null)
     {
+        $this->id = $id;
         $this->mail = $mail;
         $this->mdp = $mdp;
         $this->lastname = $lastname;
         $this->firstname = $firstname;
+        $this->userPro = $userPro;
     }
 
     // Geter & Seter
+
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function getMail(): string
     {
@@ -49,9 +58,30 @@ class User
         return $this;
     }
 
-    // Méthodes 
+    // public function getRole()
+    // {
+    //     return $this->role;
+    // }
+
+
+    public function getUserPro(): ?UserPro
+    {
+        return $this->userPro;
+    }
 
     /**
-     * Fonction de base pour attaquer pour tous les personnages
+     * @return  self
      */
+    public function setUserPro(UserPro $userPro): self
+    {
+        $this->userPro = $userPro;
+
+        return $this;
+    }
+
+    // Méthodes 
 }
+
+/**
+ * Permet de décrire la méthode ou une future instance/classe
+ */

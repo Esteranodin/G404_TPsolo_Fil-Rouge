@@ -10,7 +10,7 @@ require_once("./components/header.php");
 
     <main>
 
-    <section class="ml-8">
+        <section class="ml-8">
             <h2 class="text-primary-blue font-title text-2xl font-bold pt-4 pb-4 pl-4">Remplissez les champs suivants</h2>
             <hr class="border-2 border-primary-blue w-full ml-16">
 
@@ -40,6 +40,25 @@ require_once("./components/header.php");
 
                     <input type="submit" value="S'inscrire" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off py-2 px-6 text-center w-[20%]" />
 
+                    <h3 class="text-primary-grey font-title text-2xl font-bold pt-4 pb-4 pl-4">Si vous êtes un professionnel, veuillez aussi remplir les champs suivants</h3>
+
+                    <div class="flex gap-4">
+                        <label for="phone">Votre numéro de téléphone :</label>
+                        <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="phone" name="phone"/>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <label for="company">Le nom de votre entreprise :</label>
+                        <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="company" name="company"/>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <label for="companyAdress">L'adresse de votre entreprise :</label>
+                        <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="companyAdress" name="companyAdress" />
+                    </div> 
+
+                    <input type="submit" value="Création d'un compte PRO" class="bg-neutral-black rounded-[60px] font-medium text-primary-yellow py-2 px-6 text-center w-[20%]" />
+
                 </form>
 
             </div>
@@ -48,38 +67,39 @@ require_once("./components/header.php");
 
         <!-- Erreurs a retravailler -->
 
-<?php
-if (isset($_GET["error"])) {?> <p class="text-center text-xl font-semibold text-red-500"> <?php
+        <?php
+        if (isset($_GET["error"])) { ?> <p class="text-center text-xl font-semibold text-red-500"> <?php
 
-switch ($_GET["error"]) {
-    case 'invalidRequest':
-        ?> Erreur : requête invalide (mauvaise méthode HTTP) <?php
-        break;
-    case 'removedInput':
-        ?> Erreur : un ou plusieurs inputs sont manquants <?php
-        break;
-    case 'emptyInputs':
-        ?> Erreur : vous n'avez pas tout rempli <?php
-        break;
-    case 'tooLong':
-        ?> Erreur : l'username ou le mot de passe est trop long <?php
-        break;
-    case 'incorrectMail':
-        ?> Erreur : e-mail incorrect <?php
-        break;
-    case 'takenUsername':
-        ?> Erreur : ce nom d'utilisateur est déjà pris <?php
-        break;
-    case 'takenMail':
-        ?> Erreur : cet e-mail est déjà utilisé <?php
-        break;
-    default:
-        break; 
-}}
-?>              
+                                                                                            switch ($_GET["error"]) {
+                                                                                                case 'invalidRequest':
+                                                                                            ?> Erreur : requête invalide (mauvaise méthode HTTP) <?php
+                                                                                                    break;
+                                                                                                case 'removedInput':
+                                                                ?> Erreur : un ou plusieurs inputs sont manquants <?php
+                                                                                                    break;
+                                                                                                case 'emptyInputs':
+                                                            ?> Erreur : vous n'avez pas tout rempli <?php
+                                                                                                    break;
+                                                                                                case 'tooLong':
+                                                ?> Erreur : l'username ou le mot de passe est trop long <?php
+                                                                                                    break;
+                                                                                                case 'incorrectMail':
+                                                                ?> Erreur : e-mail incorrect <?php
+                                                                                                    break;
+                                                                                                case 'takenUsername':
+                                        ?> Erreur : ce nom d'utilisateur est déjà pris <?php
+                                                                                                    break;
+                                                                                                case 'takenMail':
+                                                        ?> Erreur : cet e-mail est déjà utilisé <?php
+                                                                                                    break;
+                                                                                                default:
+                                                                                                    break;
+                                                                                            }
+                                                                                        }
+                                                ?>
 
     </main>
-    
+
     <footer>
 
     </footer>

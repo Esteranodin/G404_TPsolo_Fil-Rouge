@@ -17,14 +17,15 @@ FAIRE COMPOSANTS pour :
     -> card
 
 
-esteranodin@hotmail.fr
-
-benny@gmail.com
-
-laloutre@gmail.com
-
 
 TO DOING : 
+UPDATE
 modification (passer par session ? ) et regarder les redirections !
 
++ si  getuserpro alors getID
+
 faire tous les composants qui demande si session pour avoir des pages différenciées ?
+
+Front pour session user = front pour session userpro 
+
+restée connecté après inscription !!!

@@ -27,11 +27,15 @@ if (
     exit;
 }
 
-// Sanitization
+// Sanitization + revoir celle de tel et adresse
 $lastname = htmlspecialchars(trim($_POST['lastname']));
 $firstname = htmlspecialchars(trim($_POST['firstname']));
 $mail = $_POST['mail'];
 $mdp = $_POST['password'];
+$phone = $_POST['phone'];
+$company = htmlspecialchars(trim($_POST['company']));
+$companyAdress = $_POST['companyAdress'];
+
 
 // Evite que l'username ou le password soient trop long
 if (strlen($mail) > 35 || strlen($mdp) > 50) {
@@ -46,11 +50,11 @@ if (!preg_match('/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]/', $mail)) {
 }
 
 
-// POO
-
+// DEBUT REFACTORISATION POO
 require_once '../utils/autoloader.php';
 
 $userRepo = new UserRepository();
+$userRepoPro = new UserProRepository();
 
 // Vérifie si le mail exixte et donc est déjà utilisé
 if ($userRepo->checkMailExist($mail)) {
@@ -59,8 +63,20 @@ if ($userRepo->checkMailExist($mail)) {
 }
 
 $user = new User($mail, $mdp, $lastname, $firstname);
+$userPro = new UserPro($phone, $company, $companyAdress, $isValidated = 0);
 
 $userRepo->createAccount($user);
+if ($userRepoPro->createAccountPro($userPro)) {
+ $user = $user->setUserPro($userPro);
+ $user = $userPro->getId();
+
+ var_dump("okcool");
+ die();
+}
+
 
 header('Location: ../public/homepage.php?success=newAccount');
 exit;
+
+
+// PRO

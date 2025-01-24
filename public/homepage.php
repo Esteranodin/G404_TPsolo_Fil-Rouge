@@ -11,10 +11,7 @@ require_once("./components/header.php");
 
     <?php if (isset($_GET["success"])) { ?> <p class="text-center text-xl font-black text-green-600 p-8"> <?php 
         switch ($_GET["success"]) {
-        case 'newAccount': ?> Votre compte a bien été créé ! <?php
-        break; }
-        } ?>
-
+        case 'newAccount': ?> Votre compte a bien été créé ! <?php break; } } ?>
 
     <!-- SEARCH BAR  -->
 <section>
