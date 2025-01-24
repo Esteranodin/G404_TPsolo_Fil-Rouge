@@ -19,6 +19,8 @@ FAIRE COMPOSANTS pour :
 
 
 TO DOING : 
+USER PRO --> ajout id_user_pro dans user
+
 UPDATE
 modification (passer par session ? ) et regarder les redirections !
 
