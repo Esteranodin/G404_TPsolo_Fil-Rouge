@@ -47,6 +47,10 @@ $user = $_SESSION['user'];
                     </div>
 
          <input type="submit" value="Confirmez vos modifications" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off mt-4 py-2 px-6 text-center w-2/6" />
+        
+         <div class="flex justify-center">
+                <a class="bg-primary-grey rounded-[60px] font-medium text-neutral-white-off mt-4 py-2 px-6 text-center w-1/6" href="./account.php">Retourner à votre compte</a>
+            </div>
 
     </main>
     
