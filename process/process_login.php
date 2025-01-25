@@ -2,7 +2,7 @@
 
 // empêche de changer la requete en GET
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../public/connexion.php?error=invalidRequest');
+    header('Location: ../public/login.php?error=invalidRequest');
     exit;
 }
 
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 if (
     !isset($_POST['mail'], $_POST['password'])
 ) {
-    header('Location: ../public/connexion.php?error=removedInput');
+    header('Location: ../public/login.php?error=removedInput');
     exit;
 }
 
@@ -19,7 +19,7 @@ if (
     empty($_POST['mail']) ||
     empty($_POST['password'])
 ) {
-    header('Location: ../public/connexion.php?error=emptyInputs');
+    header('Location: ../public/login.php?error=emptyInputs');
     exit;
 }
 
@@ -34,7 +34,7 @@ require_once '../utils/autoloader.php';
 $userRepo = new UserRepository();
 
 if (!$userRepo->checkMailExist($mail)) {
-    header('Location: ../public/connexion.php?error=undefineAccount');
+    header('Location: ../public/login.php?error=undefineAccount');
     exit();
 }
 
@@ -42,7 +42,7 @@ if (!$userRepo->checkMailExist($mail)) {
 $user = $userRepo->checkPassword($mail, $mdp);
 
 if (!$user) {
-    header('Location: ../public/connexion.php?error=passwordIncorrect');
+    header('Location: ../public/login.php?error=passwordIncorrect');
     exit();
 }
 

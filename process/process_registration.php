@@ -1,10 +1,10 @@
 <?php
 
-// Process de secu a passer en POO via un objet ValidaroService par exemple
+// Process de secu a passer en POO via un objet ValidarService par exemple
 
 // empêche de changer la requete en GET
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../public/inscription.php?error=invalidRequest');
+    header('Location: ../public/registration.php?error=invalidRequest');
     exit;
 }
 
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 if (
     !isset($_POST['mail'], $_POST['password'], $_POST['lastname'], $_POST['firstname'],)
 ) {
-    header('Location: ../public/inscription.php?error=removedInput');
+    header('Location: ../public/registration.php?error=removedInput');
     exit;
 }
 
@@ -23,29 +23,29 @@ if (
     empty($_POST['mail']) ||
     empty($_POST['password'])
 ) {
-    header('Location: ../public/inscription.php?error=emptyInputs');
+    header('Location: ../public/registration.php?error=emptyInputs');
     exit;
 }
 
 // Sanitization + revoir celle de tel et adresse
 $lastname = htmlspecialchars(trim($_POST['lastname']));
 $firstname = htmlspecialchars(trim($_POST['firstname']));
-$mail = $_POST['mail'];
-$mdp = $_POST['password'];
-$phone = $_POST['phone'];
+$mail = trim($_POST['mail']);
+$mdp = trim($_POST['password']);
+$phone = trim($_POST['phone']);
 $company = htmlspecialchars(trim($_POST['company']));
-$companyAdress = $_POST['companyAdress'];
+$companyAdress = htmlspecialchars(trim($_POST['companyAdress']));
 
 
 // Evite que l'username ou le password soient trop long
 if (strlen($mail) > 35 || strlen($mdp) > 50) {
-    header('Location: ../public/inscription.php?error=tooLong');
+    header('Location: ../public/registration.php?error=tooLong');
     exit;
 }
 
 // Verification email conforme vie regex
 if (!preg_match('/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]/', $mail)) {
-    header('Location: ../public/inscription.php?error=incorrectMail');
+    header('Location: ../public/registration.php?error=incorrectMail');
     exit;
 }
 
@@ -58,7 +58,7 @@ $userRepoPro = new UserProRepository();
 
 // Vérifie si le mail exixte et donc est déjà utilisé
 if ($userRepo->checkMailExist($mail)) {
-    header('Location: ../public/connexion.php?error=takenMail');
+    header('Location: ../public/login.php?error=takenMail');
     exit();
 }
 
