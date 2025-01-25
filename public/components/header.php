@@ -1,14 +1,10 @@
 <?php
-
-
 if (isset($_SESSION['user'])) {
     /**
      * @var User $user
      */
     $user = $_SESSION['user'];
 }
-
-
 ?>
 
 <header class="flex flex-col">
@@ -34,10 +30,10 @@ if (isset($_SESSION['user'])) {
             <img class="h-10" src="./assets/src/logo.jpg" alt="Image du logo de l'entreprise Bookmaker">
         </a>
 
-        <?php if (isset($_SESSION["user"])) { ?>
+        <?php if (isset($user)) { ?>
             <a href="account.php"> <p class="text-primary-pink font-title text-xl font-bold pt-4 pb-4 pl-4">Hi, <?= $user->getFirstname() ?> !</p></a>
-        <?php } else { ?> <a class="w-3/12 flex justify-end" href="./connexion.php">
-                <img src="./assets/src/user-round.svg" alt="Icone de connexion">
+        <?php } else { ?> <a class="w-3/12 flex justify-end" href="./login.php">
+                <img src="./assets/src/user-round.svg" alt="Icone de login">
             </a>
         <?php } ?>
 

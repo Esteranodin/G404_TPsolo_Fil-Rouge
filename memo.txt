@@ -1,10 +1,7 @@
 Si le temsp pndt refactorisation :
 
-    - modales pour connexion et une pour inscription au lieu de page dédiée
     - script pour hidden les éléments du header suivant endroit où l'on se trouve, comme icone de connexion sur page de connexion
 
-
-UI pour dire inscription réussie + erreurs sur connexion.php
 
 Améliorer design nav barre comme grosseur logo > au reste + rond
 
@@ -17,12 +14,12 @@ FAIRE COMPOSANTS pour :
     -> card
 
 
-
 TO DOING : 
 USER PRO --> ajout id_user_pro dans user
 
-UPDATE
-modification (passer par session ? ) et regarder les redirections !
+
+comment faire pour mofifier mot de passe ? mettre le hasher en value ? des étoiles ?
+
 
 + si  getuserpro alors getID
 
@@ -31,3 +28,16 @@ faire tous les composants qui demande si session pour avoir des pages différenc
 Front pour session user = front pour session userpro 
 
 restée connecté après inscription !!!
+
+
+
+meilleure façon d'écrire tous les swiths de messages ? ternaire ? 
+
+
+faire taper ancien mot de passe pour valider le nouveau ? 
+
+en session $_SESSION['user'] = $user ;
+DONC
+($_SESSION['user']->getMail()); = recup le mail de l'objet user en session
+OU PLUS SIMPLEMENT
+$user->getMail();

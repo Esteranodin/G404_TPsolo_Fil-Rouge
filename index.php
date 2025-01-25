@@ -6,3 +6,5 @@ session_destroy();
 
 header("Location: ./public/homepage.php");
 exit;
+
+?>

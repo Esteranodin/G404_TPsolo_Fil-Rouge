@@ -7,6 +7,6 @@ abstract class DatabaseRepository
 
     public function __construct()
     {
-        $this->pdo = Database::getConnection();
+        $this->pdo = Database::getlogin();
     }
 }

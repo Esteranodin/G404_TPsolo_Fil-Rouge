@@ -48,7 +48,6 @@ final class UserRepository extends DatabaseRepository
             ]);
             // permet de recupérer le dernier id créé
             return $this->pdo->lastInsertId();
-
         } catch (PDOException $error) {
             echo "Erreur lors de la requête : " . $error->getMessage();
             exit;
@@ -86,23 +85,33 @@ final class UserRepository extends DatabaseRepository
         }
     }
 
-    // public function modifiedAccount(User $user): void
-    // {
-    //     try {
-    //         $sql = "UPDATE `user` SET `mail`=':mail',`password`=':mdp',`lastname`=':lastname',`firstname`=':firstname'";
-    //         // Hashage du mot de passe pour la sécurité
-    //         $user->setPassword(password_hash($user->getPassword(), PASSWORD_BCRYPT));
+    public function modifiedAccount($mail, $userLastname, $userFirstname, $newMdp = null)
+    {
+        try {
+            $sql = "UPDATE `user` SET `lastname`= :lastname, `firstname`= :firstname";
 
-    //         $stmt = $this->pdo->prepare($sql);
-    //         $stmt->execute([
-    //             ':mail' => $user->getMail(),
-    //             ':mdp' => $user->getPassword(),
-    //             ':lastname' => $user->getLastname(),
-    //             ':firstname' => $user->getFirstname()
-    //         ]);
-    //     } catch (PDOException $error) {
-    //         echo "Erreur lors de la requête : " . $error->getMessage();
-    //         exit;
-    //     }
-    // }
+            $userDatas = [
+                ':mail' => $mail,
+                ':lastname' => $userLastname,
+                ':firstname' => $userFirstname
+            ];
+
+            // Seulement s'il y a un nouveau mot de passe, il est haché et ajouté à la requête
+            if ($newMdp !== null) {
+                $mdpHashed = password_hash($newMdp, PASSWORD_BCRYPT);
+                $sql .= ", `password` = :password";
+                $userDatas[':password'] = $mdpHashed;
+            }
+            // Concaténation requête
+            $sql .= " WHERE `mail` = :mail";
+
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute($userDatas);
+
+        } catch (PDOException $error) {
+            echo "Erreur lors de la requête : " . $error->getMessage();
+            exit;
+        }
+    }
 }
