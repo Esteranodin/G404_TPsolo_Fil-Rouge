@@ -14,11 +14,13 @@ FAIRE COMPOSANTS pour :
     -> card
 
 
+TO DO : 
+MAJ TRELLO
+un bouton de retour a cote de confirmez modifications
+
+
 TO DOING : 
 USER PRO --> ajout id_user_pro dans user
-
-
-comment faire pour mofifier mot de passe ? mettre le hasher en value ? des étoiles ?
 
 
 + si  getuserpro alors getID
@@ -30,11 +32,13 @@ Front pour session user = front pour session userpro
 restée connecté après inscription !!!
 
 
-
 meilleure façon d'écrire tous les swiths de messages ? ternaire ? 
 
 
 faire taper ancien mot de passe pour valider le nouveau ? 
+obliger d'afficher contenu du mot de passe ?
+
+
 
 en session $_SESSION['user'] = $user ;
 DONC

@@ -14,7 +14,7 @@ if (isset($_SESSION['user'])) {
 
     <main>
 
-        <section class="ml-8">
+        <section class="ml-8 flex flex-col">
             <h2 class="text-primary-blue font-title text-2xl font-bold pt-4 pb-4 pl-4">Hi, <?= $user->getFirstname() ?> !</h2>
             <hr class="border-2 border-primary-blue w-full ml-16">
 
@@ -28,6 +28,12 @@ if (isset($_SESSION['user'])) {
                 <p>Votre mot de passe : ******** </p>
 
                 <a class="bg-primary-grey rounded-[60px] font-medium text-neutral-white-off mt-4 py-2 px-6 text-center w-2/6" href="./accountModifications.php">Modifier vos informations</a>
+            </div>
+
+            <div class="flex justify-center">
+                <a class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off mt-4 py-2 px-6 text-center w-1/6" href="../process/process_logout.php">Déconnexion</a>
+            </div>
+        </section>
     </main>
 
 <?php
