@@ -862,6 +862,10 @@ video {
   gap: 2rem;
 }
 
+.gap-9{
+  gap: 2.25rem;
+}
+
 .place-self-center{
   place-self: center;
 }
@@ -919,6 +923,34 @@ video {
   border-width: 1px;
 }
 
+.border-\[0\.75px\]{
+  border-width: 0.75px;
+}
+
+.border-\[0\.5px\]{
+  border-width: 0.5px;
+}
+
+.border-\[0\.5rem\]{
+  border-width: 0.5rem;
+}
+
+.border-\[0\.1rem\]{
+  border-width: 0.1rem;
+}
+
+.border-\[0\.1vw\]{
+  border-width: 0.1vw;
+}
+
+.border-\[0\.5vw\]{
+  border-width: 0.5vw;
+}
+
+.border-\[0\.1px\]{
+  border-width: 0.1px;
+}
+
 .border-border-grey{
   border-color: rgba(85, 85, 85, 0.15);
 }
@@ -941,6 +973,14 @@ video {
 .border-primary-pink{
   --tw-border-opacity: 1;
   border-color: hsl(332 100 64 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\]{
+  border-color: ;
+}
+
+.border-\[0\.rem\]{
+  border-color: 0.rem;
 }
 
 .bg-blue-500{
@@ -1079,11 +1119,6 @@ video {
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-\[\]{
-  padding-top: ;
-  padding-bottom: ;
 }
 
 .py-\[1px\]{
@@ -1306,16 +1341,6 @@ video {
   transform: translateX(30%);
 }
 
-.placeholder\:py-1::-moz-placeholder{
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-.placeholder\:py-1::placeholder{
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .placeholder\:text-input::-moz-placeholder{
   font-size: 12px;
 }
@@ -1335,6 +1360,11 @@ video {
 .invalid\:border-pink-500:invalid{
   --tw-border-opacity: 1;
   border-color: rgb(236 72 153 / var(--tw-border-opacity, 1));
+}
+
+.invalid\:border-primary-pink:invalid{
+  --tw-border-opacity: 1;
+  border-color: hsl(332 100 64 / var(--tw-border-opacity, 1));
 }
 
 .invalid\:text-pink-600:invalid{
@@ -1366,16 +1396,12 @@ video {
   outline-style: solid;
 }
 
-.focus\:outline-border-pink:focus{
-  outline-color: rgb(255, 73, 158);
+.focus\:outline-border-blue:focus{
+  outline-color: rgb(34, 170, 161);
 }
 
 .focus\:outline-sky-500:focus{
   outline-color: #0ea5e9;
-}
-
-.focus\:outline-border-blue:focus{
-  outline-color: rgb(34, 170, 161);
 }
 
 .focus\:ring-2:focus{
@@ -1399,8 +1425,21 @@ video {
   border-color: rgb(236 72 153 / var(--tw-border-opacity, 1));
 }
 
+.focus\:invalid\:border-primary-pink:invalid:focus{
+  --tw-border-opacity: 1;
+  border-color: hsl(332 100 64 / var(--tw-border-opacity, 1));
+}
+
 .focus\:invalid\:outline-pink-500:invalid:focus{
   outline-color: #ec4899;
+}
+
+.focus\:invalid\:outline-primary-pink:invalid:focus{
+  outline-color: hsl(332, 100, 64);
+}
+
+.focus\:invalid\:outline-border-pink:invalid:focus{
+  outline-color: rgb(255, 73, 158);
 }
 
 .disabled\:border-gray-200:disabled{

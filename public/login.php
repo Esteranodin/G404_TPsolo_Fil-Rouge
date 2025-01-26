@@ -19,15 +19,15 @@ require_once("./components/header.php");
 
                     <div class="flex gap-4 items-center">
                         <label for="mail">Mail :</label>
-                        <input placeholder="janedoe@exemple.fr" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey border border-primary-grey rounded-lg shadow-md focus:outline-border-blue " type="email" id="mail" name="mail" required />
-                    </div>
-<!-- invalid:border-pink-500 invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500 disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500 disabled:shadow-none dark:disabled:border-gray-700 dark:disabled:bg-gray-800/20 -->
-                    <div class="flex gap-4">
-                        <label for="password">Password (8 caractères minimum) :</label>
-                        <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="password" id="password" name="password" minlength="8" required />
+                        <input placeholder="votremail@example.fr" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink" type="email" id="mail" name="mail" required />
                     </div>
 
-                    <input type="submit" value="Se connecter" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off py-2 px-6 text-center w-[20%] box-content" />
+                    <div class="flex gap-4">
+                        <label for="password">Password :</label>
+                        <input placeholder="8 caractères minimum" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink" type="password" id="password" name="password" minlength="8" required />
+                    </div>
+
+                    <input type="submit" value="Se connecter" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off py-2 px-6 text-center w-1/6 box-content" />
 
                 </form>
             </div>
