@@ -38,7 +38,7 @@ require_once("./components/header.php");
                         <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="password" id="password" name="password" minlength="8" required />
                     </div>
 
-                    <input type="submit" value="S'inscrire" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off py-2 px-6 text-center w-[20%]" />
+                    <input type="submit" value="S'inscrire" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off py-2 px-6 text-center w-[20%] box-content" />
 
                     <h3 class="text-primary-grey font-title text-2xl font-bold pt-4 pb-4 pl-4">Si vous êtes un professionnel, veuillez aussi remplir les champs suivants</h3>
 
@@ -57,7 +57,7 @@ require_once("./components/header.php");
                         <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="companyAdress" name="companyAdress" required />
                     </div> 
 
-                    <input type="submit" value="Création d'un compte PRO" class="bg-neutral-black rounded-[60px] font-medium text-primary-yellow py-2 px-6 text-center w-[20%]" />
+                    <input type="submit" value="Création d'un compte PRO" class="bg-neutral-black rounded-[60px] font-medium text-primary-yellow py-2 px-6 text-center w-[20%] box-content" />
 
                 </form>
 

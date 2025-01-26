@@ -26,6 +26,8 @@ module.exports = {
         },
         border: {
           'grey': 'rgba(85, 85, 85, 0.15)',
+          'pink': 'rgb(255, 73, 158)',
+          'blue': 'rgb(34, 170, 161)',
         },
 
       },
@@ -33,6 +35,7 @@ module.exports = {
       fontSize: {
         'title': '30px',
         'paragraph': '15px',
+        'input': '12px',
       },
 
       fontFamily: {

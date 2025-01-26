@@ -46,7 +46,7 @@ $user = $_SESSION['user'];
                         <input class="shadow-lg ps-3 text-paragraph placeholder-primary-grey border-primary-grey rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue"type="password" id="newMdp" name="newMdp" minlength="8" value="<?= $user->getPassword() ?>" />
                     </div>
 
-         <input type="submit" value="Confirmez vos modifications" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off mt-4 py-2 px-6 text-center w-2/6" />
+         <input type="submit" value="Confirmez vos modifications" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off mt-4 py-2 px-6 text-center w-2/6 box-content" />
         
          <div class="flex justify-center">
                 <a class="bg-primary-grey rounded-[60px] font-medium text-neutral-white-off mt-4 py-2 px-6 text-center w-1/6" href="./account.php">Retourner à votre compte</a>
