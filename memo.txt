@@ -1,42 +1,33 @@
-Si le temsp pndt refactorisation :
+<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
 
-    - script pour hidden les éléments du header suivant endroit où l'on se trouve, comme icone de connexion sur page de connexion
-
-
-Améliorer design nav barre comme grosseur logo > au reste + rond
-
-Faire attention aux police pas de partout
-
-Prix passe dessus menu burger => en absolu ?
+ATTENTION : repartir sur du responsive notamment pour tailles des inputs
 
 
-FAIRE COMPOSANTS pour :
+Le menu burger ne se ferme pas automatiquement si on clique en dehors + si on aggrandit fenêtre (=revient quand on revient a plus petit)
++ icone filtres cachée qd menu burger ouvert
+Front search bar avce la croix pas visible 
+
+CENTRER titre + menu burger
+
+meilleure façon d'écrire tous les swiths de messages ? ternaire ? 
+
+faire taper ancien mot de passe pour valider le nouveau ? 
+obliger d'afficher contenu du mot de passe ? en valeur de mot de passe peut etre pas le mot de passe lui meme ? (pour modif' et avoir un input non empty)
+
+FAIRE COMPOSANTS pour : (faire que tous les composantsdemande si session pour avoir des pages différenciées ?)
     -> card
 
-
-TO DO : 
-MAJ TRELLO
-un bouton de retour a cote de confirmez modifications
 
 
 TO DOING : 
 USER PRO --> ajout id_user_pro dans user
-
+création d'un id user pro tant que pas de champs required qui empeche validation champs vide du profil pro
 
 + si  getuserpro alors getID
 
-faire tous les composants qui demande si session pour avoir des pages différenciées ?
-
-Front pour session user = front pour session userpro 
-
-restée connecté après inscription !!!
 
 
-meilleure façon d'écrire tous les swiths de messages ? ternaire ? 
-
-
-faire taper ancien mot de passe pour valider le nouveau ? 
-obliger d'afficher contenu du mot de passe ?
+restée connecté après inscription !!! faire en sorte qu'on reste connecté après inscription via session
 
 
 
@@ -45,3 +36,7 @@ DONC
 ($_SESSION['user']->getMail()); = recup le mail de l'objet user en session
 OU PLUS SIMPLEMENT
 $user->getMail();
+
+
+
+

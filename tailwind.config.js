@@ -19,19 +19,26 @@ module.exports = {
           'white': 'hsl(0, 0, 99)',
           'white-off': 'hsl(0, 52, 95)',
           'black': 'hsl(0, 0, 7)',
-          'grey': 'hsl(264, 24, 96)',
+          'grey-off': 'hsl(264, 24, 96)',
         },
         shadow: {
           'filter': 'rgba(0, 0, 0, 0.25)',
         },
         border: {
-          'grey': 'rgba(85, 85, 85, 0.15)',
+          'grey': 'rgba(52, 52, 52, 0.15)',
           'pink': 'rgb(255, 73, 158)',
           'blue': 'rgb(34, 170, 161)',
+          'yellow': 'rgb(255, 237, 101)',
+        },
+        hover: {
+          'grey': 'rgba(52, 52, 52, 0.75)',
+          'pink': 'rgb(181, 53, 112)',
+          'blue': 'rgb(25, 125, 118)',
+          'yellow': 'rgb(207, 192, 83)',
         },
 
       },
-      
+
       fontSize: {
         'title': '30px',
         'paragraph': '15px',

@@ -70,8 +70,6 @@ if ($userRepoPro->createAccountPro($userPro)) {
  $user = $user->setUserPro($userPro);
  $user = $userPro->getId();
 
- var_dump("okcool");
- die();
 }
 
 

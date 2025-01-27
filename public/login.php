@@ -19,15 +19,15 @@ require_once("./components/header.php");
 
                     <div class="flex gap-4 items-center">
                         <label for="mail">Mail :</label>
-                        <input placeholder="votremail@example.fr" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink" type="email" id="mail" name="mail" required />
+                        <input placeholder="votremail@example.fr" class="w-1/6 ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink" type="email" id="mail" name="mail" required />
                     </div>
 
                     <div class="flex gap-4">
                         <label for="password">Password :</label>
-                        <input placeholder="8 caractères minimum" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink" type="password" id="password" name="password" minlength="8" required />
+                        <input placeholder="8 caractères minimum" class="w-1/6 ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink" type="password" id="password" name="password" minlength="8" required />
                     </div>
 
-                    <input type="submit" value="Se connecter" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off py-2 px-6 text-center w-1/6 box-content" />
+                    <input type="submit" value="Se connecter" class="bg-primary-pink rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center w-1/6 box-content cursor-pointer" />
 
                 </form>
             </div>
@@ -41,7 +41,7 @@ require_once("./components/header.php");
                 <div class="flex flex-col pl-4 gap-8">
                     <p class="text-primary-grey font-title text-2xl font-bold">Pas encore inscrit ?</p>
 
-                    <a class="bg-primary-grey rounded-[60px] font-medium text-neutral-white-off py-2 px-6 text-center w-[20%]" href="./registration.php">Inscrivez-vous</a>
+                    <a class="bg-primary-grey hover:bg-hover-grey rounded-[60px] font-medium text-neutral-white-off hover:text-neutral-black py-2 px-6 text-center w-[20%]" href="./registration.php">Inscrivez-vous</a>
                 </div>
 
         </section>

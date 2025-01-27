@@ -5,11 +5,9 @@ require_once("./components/header.php");
 
 ?>
 
-
 <body class="bg-neutral-white-off font-body text-paragraph">
 
     <main>
-
         <section class="ml-8">
             <h2 class="text-primary-blue font-title text-2xl font-bold pt-4 pb-4 pl-4">Remplissez les champs suivants</h2>
             <hr class="border-2 border-primary-blue w-full ml-16">
@@ -18,50 +16,52 @@ require_once("./components/header.php");
 
                 <form action="../process/process_registration.php" method="post" class="flex flex-col gap-8">
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 items-center">
                         <label for="firstname">Votre prénom :</label>
-                        <input class="shadow-lg ps-3 text-paragraph placeholder-primary-grey border-primary-grey rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="firstname" name="firstname" required />
+                        <input placeholder="Saisir votre prénom ici" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue font-body" type="text" id="firstname" name="firstname" required />
                     </div>
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 items-center">
                         <label for="lastname">Votre nom :</label>
-                        <input class="shadow-lg ps-3 text-paragraph placeholder-primary-grey border-primary-grey rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="lastname" name="lastname" required />
+                        <input placeholder="Saisir votre nom de famille ici" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue font-body" type="text" id="lastname" name="lastname" required />
                     </div>
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 items-center">
                         <label for="mail">Votre e-mail :</label>
-                        <input class="shadow-lg ps-3 text-paragraph placeholder-primary-grey border-primary-grey rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="mail" name="mail" required />
+                        <input placeholder="votremail@example.fr" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink font-body" type="email" id="mail" name="mail" required />
                     </div>
 
-                    <div class="flex gap-4">
-                        <label for="password">Password (8 caractères minimum) :</label>
-                        <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="password" id="password" name="password" minlength="8" required />
+                    <div class="flex gap-4 items-center">
+                        <label for="password">Password :</label>
+                        <input  placeholder="8 caractères minimum" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink font-body" type="password" id="password" name="password" minlength="8" required />
                     </div>
 
-                    <input type="submit" value="S'inscrire" class="bg-primary-pink rounded-[60px] font-medium text-neutral-white-off py-2 px-6 text-center w-[20%] box-content" />
+                    <input type="submit" value="S'inscrire" class="bg-primary-pink rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center w-1/6 box-content cursor-pointer" />
 
-                    <h3 class="text-primary-grey font-title text-2xl font-bold pt-4 pb-4 pl-4">Si vous êtes un professionnel, veuillez aussi remplir les champs suivants</h3>
+                    <h3 class="text-primary-grey font-title text-2xl font-bold pt-4 pb-4 pl-4">Si vous êtes un professionnel, veuillez aussi remplir les champs suivants :</h3>
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 items-center">
                         <label for="phone">Votre numéro de téléphone :</label>
-                        <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="phone" name="phone" required />
+                        <input placeholder="Saisir votre n° de tél." class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue font-body" type="text" id="phone" name="phone" />
                     </div>
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 items-center">
                         <label for="company">Le nom de votre entreprise :</label>
-                        <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="company" name="company" required />
+                        <input placeholder="Saisir le nom de votre entreprise" class="w-1/6 ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue font-body" type="text" id="company" name="company" />
                     </div>
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 items-center">
                         <label for="companyAdress">L'adresse de votre entreprise :</label>
-                        <input class="shadow-lg ps-3 font-semibold text-paragraph placeholder-primary-grey border-primary-grey  rounded-3xl bg-neutral-white focus:ring-primary-blue focus:border-primary-blue" type="text" id="companyAdress" name="companyAdress" required />
+                        <input placeholder="Saisir l'adresse de votre entreprise" class="w-1/6 ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue font-body" type="text" id="companyAdress" name="companyAdress" />
                     </div> 
 
-                    <input type="submit" value="Création d'un compte PRO" class="bg-neutral-black rounded-[60px] font-medium text-primary-yellow py-2 px-6 text-center w-[20%] box-content" />
+                    <input type="submit" value="Création d'un compte PRO" class="bg-primary-grey rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center w-1/5 box-content cursor-pointer" />
 
                 </form>
 
             </div>
+
+            <a class="absolute top-48 right-10 bg-primary-grey rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center box-content cursor-pointer" href="./homepage.php">Retourner à l'accueil</a>
 
         </section>
 

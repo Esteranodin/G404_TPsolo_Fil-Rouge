@@ -4,6 +4,7 @@ const burgerIcon = document.querySelector('#burgerIcon');
 const menuBurger = document.querySelector('#menuBurger');
 const closeIcon = document.querySelector('#closeIcon');
 const searchBar = document.querySelector('#searchBar');
+const slideFilters = document.querySelector('#slideFilters');
 
 
 function menuDisplay(event) {
