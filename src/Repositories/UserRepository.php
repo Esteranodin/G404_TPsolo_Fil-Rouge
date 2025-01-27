@@ -41,7 +41,7 @@ final class UserRepository extends DatabaseRepository
 
             $stmt = $this->pdo->prepare($sql);
 
-            if($user->getUserPro() === null){
+            if ($user->getUserPro() === null) {
                 $idUserPro = null;
             } else {
                 $idUserPro = $user->getUserPro()->getid();
@@ -93,25 +93,23 @@ final class UserRepository extends DatabaseRepository
         }
     }
 
-    public function modifiedAccount($mail, $userLastname, $userFirstname, $newMdp = null)
+    public function modifiedAccount(User $user, bool $newMdp = false)
     {
         try {
-            $sql = "UPDATE `user` SET `lastname`= :lastname, `firstname`= :firstname";
+
+            $sql = "UPDATE user SET lastname = :lastname, firstname = :firstname, password = :mdp WHERE id = :id";
+
+            if ($newMdp) {
+                $mdpHashed = password_hash($user->getPassword(), PASSWORD_BCRYPT);
+                $user->setPassword($mdpHashed);
+            }
 
             $userDatas = [
-                ':mail' => $mail,
-                ':lastname' => $userLastname,
-                ':firstname' => $userFirstname
+                ':id' => $user->getId(),
+                ':lastname' => $user->getLastname(),
+                ':firstname' => $user->getFirstname(),
+                ':mdp' => $user->getPassword()
             ];
-
-            // Seulement s'il y a un nouveau mot de passe, il est haché et ajouté à la requête
-            if ($newMdp !== null) {
-                $mdpHashed = password_hash($newMdp, PASSWORD_BCRYPT);
-                $sql .= ", `password` = :password";
-                $userDatas[':password'] = $mdpHashed;
-            }
-            // Concaténation requête
-            $sql .= " WHERE `mail` = :mail";
 
             $stmt = $this->pdo->prepare($sql);
 

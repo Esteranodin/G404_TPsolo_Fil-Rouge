@@ -7,8 +7,8 @@ class UserProMapper
         return new UserPro (
             $datasUserPro["phone"],
             $datasUserPro["company"],
-            $datasUserPro["companyAdress"],
-            $datasUserPro["isValidated"],
+            $datasUserPro["company_adress"],
+            $datasUserPro["is_validated"],
             $datasUserPro["id"]
         );
     }

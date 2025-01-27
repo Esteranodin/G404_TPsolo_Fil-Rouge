@@ -8,8 +8,7 @@ if (isset($_SESSION['user'])) {
      */
     $user = $_SESSION['user'];
     $userPro =$_SESSION['user']->getUserPro();
-    $userProId = $user->getUserPro()->getId();
-
+    $userProId = $userPro->getId();
 } // ajouter else et message veuillez vous connecter ou vous  inscrire
 
 ?>
@@ -33,11 +32,10 @@ if (isset($_SESSION['user'])) {
                     <p>Votre mot de passe :&ensp; ******** </p>
             
                     <?php if($userProId) { ?>
+                        <p>Votre numéro de téléphone :&ensp;<?= $userPro->getPhone() ?></p>
                         <p>Votre entreprise :&ensp;<?= $userPro->getCompany() ?></p>
                         <p>L'adresse de votre entreprise :&ensp;<?= $userPro->getCompanyAdress() ?></p>
-
                         <?php } ?>
-                    
                 </div>
 
                 <a class="bg-primary-grey rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center w-1/6 box-content cursor-pointer" href="./accountModifications.php">Modifier vos informations</a>

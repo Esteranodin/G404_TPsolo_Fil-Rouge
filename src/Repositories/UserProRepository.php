@@ -29,7 +29,7 @@ final class UserProRepository extends DatabaseRepository
     public function createAccountPro(UserPro $userPro): int
     {
         try {
-            $sql = "INSERT INTO `user_pro`(`phone`, `company`, `companyAdress`) VALUES (:phone, :company, :companyAdress)";
+            $sql = "INSERT INTO `user_pro`(`phone`, `company`, `company_adress`) VALUES (:phone, :company, :companyAdress)";
 
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
@@ -39,6 +39,29 @@ final class UserProRepository extends DatabaseRepository
             ]);
 
             return $this->pdo->lastInsertId();
+
+        } catch (PDOException $error) {
+            echo "Erreur lors de la requête : " . $error->getMessage();
+            exit;
+        }
+    }
+
+    public function modifiedAccountPro(UserPro $userPro): void
+    {
+        try {
+            $sql = "UPDATE `user_pro` SET `phone`= :phone, `company`= :company, `company_adress`= :companyAdress WHERE id = :id";
+
+            $userDatas = [
+                ':phone' => $userPro->getPhone(),
+                ':company' => $userPro->getCompany(),
+                ':companyAdress' => $userPro->getCompanyAdress(),
+                ':id' => $userPro->getId()
+
+            ];
+
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->execute($userDatas);
 
         } catch (PDOException $error) {
             echo "Erreur lors de la requête : " . $error->getMessage();

@@ -41,13 +41,31 @@ final class UserPro
         return $this->phone;
     }
 
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+        return $this;
+    }
+
     public function getCompany(): string
     {
         return $this->company;
     }
 
+    public function setCompany($company)
+    {
+        $this->company = $company;
+        return $this;
+    }
+
     public function getCompanyAdress(): string
     {
         return $this->companyAdress;
+    }
+
+    public function setCompanyAdress($companyAdress)
+    {
+        $this->companyAdress = $companyAdress;
+        return $this;
     }
 }

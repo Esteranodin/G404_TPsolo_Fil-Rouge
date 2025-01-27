@@ -61,7 +61,7 @@ if ($userRepo->checkMailExist($mail)) {
     exit();
 }
 
-// grâce au bouton submit qui a pour nom comptePro
+// bouton submit du formulaire nomenclaturer "comptePro"
 if($_POST['comptePro']) {
     if (empty($_POST['phone'])) {
         header('Location: ../public/registration.php?error=phoneMissing');
