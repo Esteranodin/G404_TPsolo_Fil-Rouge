@@ -7,25 +7,6 @@ final class UserProRepository extends DatabaseRepository
         parent::__construct();
     }
 
-    // public function isUserPro(UserPro $userPro)
-    // {
-
-    //     $sql = "SELECT * FROM `user_pro` WHERE `isValidated` = true";
-    //     $stmt = $this->pdo->prepare($sql);
-    //     $stmt->execute();
-
-    //     $userProDatas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //     $userPro = [];
-
-    //     foreach ($userProDatas as $userProData) {
-    //         $userPro[] = UserProMapper::MapToObject($userProData);
-    //     }
-
-    //     return $userPro;
-    // }
-
-
     public function findById(int $idUserPro): ?UserPro
     {
         $sql = "SELECT * FROM `user_pro` WHERE `id` = :id";
@@ -45,7 +26,7 @@ final class UserProRepository extends DatabaseRepository
         return $userPro;
     }
 
-    public function createAccountPro(UserPro $userPro): UserPro
+    public function createAccountPro(UserPro $userPro): int
     {
         try {
             $sql = "INSERT INTO `user_pro`(`phone`, `company`, `companyAdress`) VALUES (:phone, :company, :companyAdress)";
@@ -57,7 +38,7 @@ final class UserProRepository extends DatabaseRepository
                 ':companyAdress' => $userPro->getCompanyAdress(),
             ]);
 
-            return $userPro;
+            return $this->pdo->lastInsertId();
 
         } catch (PDOException $error) {
             echo "Erreur lors de la requête : " . $error->getMessage();
@@ -65,9 +46,3 @@ final class UserProRepository extends DatabaseRepository
         }
     }
 }
-
-    // if($userData['id_user_pro']){
-    //     $userData['id_user_pro'] = $this->detailProRepo->findById($userData['id_user_pro']);
-    // }
-
-    // return $userData;

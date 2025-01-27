@@ -9,7 +9,6 @@ class User
     private string $lastname;
     private string $firstname;
     private ?UserPro $userPro;
-
     // private string $role;
 
     // Méthode magique
@@ -29,6 +28,13 @@ class User
     public function getId()
     {
         return $this->id;
+    }
+    
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getMail(): string
@@ -77,21 +83,16 @@ class User
         return $this;
     }
 
-
     // public function getRole()
     // {
     //     return $this->role;
     // }
-
 
     public function getUserPro(): ?UserPro
     {
         return $this->userPro;
     }
 
-    /**
-     * @return  self
-     */
     public function setUserPro(UserPro $userPro): self
     {
         $this->userPro = $userPro;
@@ -100,6 +101,7 @@ class User
     }
 
     // Méthodes 
+
 }
 
 /**

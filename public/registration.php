@@ -8,11 +8,11 @@ require_once("./components/header.php");
 <body class="bg-neutral-white-off font-body text-paragraph">
 
     <main>
-        <section class="ml-8">
+        <section class="ml-8 flex flex-col">
             <h2 class="text-primary-blue font-title text-2xl font-bold pt-4 pb-4 pl-4">Remplissez les champs suivants</h2>
             <hr class="border-2 border-primary-blue w-full ml-16">
 
-            <div class="pt-10 pb-2 pl-4">
+            <div class="pt-10 pb-2 pl-4 w[60%]">
 
                 <form action="../process/process_registration.php" method="post" class="flex flex-col gap-8">
 
@@ -33,10 +33,15 @@ require_once("./components/header.php");
 
                     <div class="flex gap-4 items-center">
                         <label for="password">Password :</label>
-                        <input  placeholder="8 caractères minimum" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink font-body" type="password" id="password" name="password" minlength="8" required />
+                        <input placeholder="8 caractères minimum" class="ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue focus:invalid:outline-border-pink font-body" type="password" id="password" name="password" minlength="8" required />
                     </div>
 
                     <input type="submit" value="S'inscrire" class="bg-primary-pink rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center w-1/6 box-content cursor-pointer" />
+
+
+                    <?php if (isset($_GET["error"])) { ?> <p class="text-center text-xl font-semibold text-red-500"> <?php 
+        switch ($_GET["error"]) {
+        case 'phoneMissing': ?> Vous devez pour créer un compte professionnel OBLIGATOIREMENT saisir un numéro de téléphone <?php break; } } ?>
 
                     <h3 class="text-primary-grey font-title text-2xl font-bold pt-4 pb-4 pl-4">Si vous êtes un professionnel, veuillez aussi remplir les champs suivants :</h3>
 
@@ -53,9 +58,9 @@ require_once("./components/header.php");
                     <div class="flex gap-4 items-center">
                         <label for="companyAdress">L'adresse de votre entreprise :</label>
                         <input placeholder="Saisir l'adresse de votre entreprise" class="w-1/6 ps-3 px-2 placeholder-primary-grey placeholder:text-input placeholder:font-light py-[1px] bg-neutral-grey-off border border-primary-grey rounded-lg shadow-md focus:outline-border-blue font-body" type="text" id="companyAdress" name="companyAdress" />
-                    </div> 
+                    </div>
 
-                    <input type="submit" value="Création d'un compte PRO" class="bg-primary-grey rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center w-1/5 box-content cursor-pointer" />
+                    <input type="submit" name="comptePro" value="Création d'un compte PRO" class="bg-primary-grey rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center w-1/5 box-content cursor-pointer" />
 
                 </form>
 
@@ -63,41 +68,39 @@ require_once("./components/header.php");
 
             <a class="absolute top-48 right-10 bg-primary-grey rounded-[60px] hover:bg-hover-pink font-medium text-neutral-white-off py-2 px-6 text-center box-content cursor-pointer" href="./homepage.php">Retourner à l'accueil</a>
 
-        </section>
 
-        <!-- Erreurs a retravailler -->
 
-        <?php
-        if (isset($_GET["error"])) { ?> <p class="text-center text-xl font-semibold text-red-500"> <?php
+            <!-- Erreurs a retravailler -->
 
-                                                                                            switch ($_GET["error"]) {
-                                                                                                case 'invalidRequest':
-                                                                                            ?> Erreur : mauvaise méthode de requête <?php
-                                                                                                    break;
-                                                                                                case 'removedInput':
-                                                                ?> Erreur : un ou plusieurs inputs sont manquants <?php
-                                                                                                    break;
-                                                                                                case 'emptyInputs':
-                                                            ?> Erreur : vous n'avez pas rempli tous les champs nécessaires <?php
-                                                                                                    break;
-                                                                                                case 'tooLong':
-                                                ?> Erreur : votre identifiant ou votre mot de passe est trop long <?php
-                                                                                                    break;
-                                                                                                case 'incorrectMail':
-                                                                ?> Erreur : e-mail incorrect <?php
-                                                                                                    break;
-                                                                                                case 'takenUsername':
-                                        ?> Erreur : ce nom d'utilisateur est déjà pris <?php
-                                                                                                    break;
-                                                                                                case 'takenMail':
-                                                        ?> Erreur : cet e-mail est déjà utilisé <?php
-                                                                                                    break;
-                                                                                                default:
-                                                                                                    break;
-                                                                                            }
-                                                                                        }
-                                                ?>
-
+<?php
+if (isset($_GET["error"])) { ?><p class="text-center text-xl font-semibold text-red-500"> <?php
+    switch ($_GET["error"]) {
+    case 'invalidRequest':
+    ?> Erreur : mauvaise méthode de requête <?php
+    break;
+    case 'removedInput':
+    ?> Erreur : un ou plusieurs inputs sont manquants <?php
+    break;
+    case 'emptyInputs':
+    ?> Erreur : vous n'avez pas rempli tous les champs nécessaires <?php
+    break;
+    case 'tooLong':
+    ?> Erreur : votre identifiant ou votre mot de passe est trop long <?php
+    break;
+    case 'incorrectMail':
+    ?> Erreur : e-mail incorrect <?php
+    break;
+    case 'takenUsername':
+    ?> Erreur : ce nom d'utilisateur est déjà pris <?php
+    break;
+    case 'takenMail':
+    ?> Erreur : cet e-mail est déjà utilisé <?php
+    break;
+    default:
+    break;
+    } } ?>
+               
+    </section>
     </main>
 
     <footer>

@@ -35,16 +35,24 @@ final class UserRepository extends DatabaseRepository
     public function createAccount(User $user): int
     {
         try {
-            $sql = "INSERT INTO `user`(`mail`, `password`, `lastname`, `firstname`) VALUES (:mail, :mdp, :lastname, :firstname)";
+            $sql = "INSERT INTO `user`(`mail`, `password`, `lastname`, `firstname`, `id_user_pro`) VALUES (:mail, :mdp, :lastname, :firstname, :idUserPro)";
             // Hashage du mot de passe pour la sécurité
             $user->setPassword(password_hash($user->getPassword(), PASSWORD_BCRYPT));
 
             $stmt = $this->pdo->prepare($sql);
+
+            if($user->getUserPro() === null){
+                $idUserPro = null;
+            } else {
+                $idUserPro = $user->getUserPro()->getid();
+            }
+
             $stmt->execute([
                 ':mail' => $user->getMail(),
                 ':mdp' => $user->getPassword(),
                 ':lastname' => $user->getLastname(),
-                ':firstname' => $user->getFirstname()
+                ':firstname' => $user->getFirstname(),
+                ':idUserPro' => $idUserPro
             ]);
             // permet de recupérer le dernier id créé
             return $this->pdo->lastInsertId();

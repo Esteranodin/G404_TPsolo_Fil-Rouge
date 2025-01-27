@@ -10,8 +10,7 @@ class UserMapper
             $datasUser["lastname"],
             $datasUser["firstname"],
             $datasUser["id"],
- 
-            // userPro doit etre un objet UserPro composé soit même dans le repository de user, ou null
+            // userPro = objet composé soit dans le même repository de user, soit null
             $datasUser["userPro"]
         );
     }

@@ -2,6 +2,7 @@
 
 ATTENTION : repartir sur du responsive notamment pour tailles des inputs
 
+ALIGNER LES ELEMENTS = ferrer a gauche
 
 Le menu burger ne se ferme pas automatiquement si on clique en dehors + si on aggrandit fenêtre (=revient quand on revient a plus petit)
 + icone filtres cachée qd menu burger ouvert
@@ -20,16 +21,9 @@ FAIRE COMPOSANTS pour : (faire que tous les composantsdemande si session pour av
 
 
 TO DOING : 
-USER PRO --> ajout id_user_pro dans user
-création d'un id user pro tant que pas de champs required qui empeche validation champs vide du profil pro
-
-+ si  getuserpro alors getID
 
 
-
-restée connecté après inscription !!! faire en sorte qu'on reste connecté après inscription via session
-
-
+Passer à un profil pro depuis un profil user de base ?
 
 en session $_SESSION['user'] = $user ;
 DONC

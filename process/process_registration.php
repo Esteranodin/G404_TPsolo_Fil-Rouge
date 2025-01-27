@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Process de secu a passer en POO via un objet ValidarService par exemple
 
 // empêche de changer la requete en GET
@@ -32,7 +32,7 @@ $lastname = htmlspecialchars(trim($_POST['lastname']));
 $firstname = htmlspecialchars(trim($_POST['firstname']));
 $mail = trim($_POST['mail']);
 $mdp = trim($_POST['password']);
-$phone = trim($_POST['phone']);
+$phone = htmlspecialchars(trim($_POST['phone']));
 $company = htmlspecialchars(trim($_POST['company']));
 $companyAdress = htmlspecialchars(trim($_POST['companyAdress']));
 
@@ -54,7 +54,6 @@ if (!preg_match('/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]/', $mail)) {
 require_once '../utils/autoloader.php';
 
 $userRepo = new UserRepository();
-$userRepoPro = new UserProRepository();
 
 // Vérifie si le mail exixte et donc est déjà utilisé
 if ($userRepo->checkMailExist($mail)) {
@@ -62,19 +61,30 @@ if ($userRepo->checkMailExist($mail)) {
     exit();
 }
 
-$user = new User($mail, $mdp, $lastname, $firstname);
-$userPro = new UserPro($phone, $company, $companyAdress, $isValidated = 0);
-
-$userRepo->createAccount($user);
-if ($userRepoPro->createAccountPro($userPro)) {
- $user = $user->setUserPro($userPro);
- $user = $userPro->getId();
-
+// grâce au bouton submit qui a pour nom comptePro
+if($_POST['comptePro']) {
+    if (empty($_POST['phone'])) {
+        header('Location: ../public/registration.php?error=phoneMissing');
+        exit;
+    }
 }
 
+$user = new User($mail, $mdp, $lastname, $firstname);
+
+if (!empty($_POST['phone'])) {
+    $userRepoPro = new UserProRepository();
+
+    $userPro = new UserPro($phone, $company, $companyAdress);
+
+    $userPro->setId($userRepoPro->createAccountPro($userPro));
+
+    
+    $user->setUserPro($userPro);
+}
+
+$user->setId($userRepo->createAccount($user));
+
+$_SESSION['user'] = $user;
 
 header('Location: ../public/homepage.php?success=newAccount');
 exit;
-
-
-// PRO

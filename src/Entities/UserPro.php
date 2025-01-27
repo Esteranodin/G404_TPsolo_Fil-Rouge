@@ -9,7 +9,7 @@ final class UserPro
     private bool $isValidated;
 
 
-    public function __construct(string $phone, string $company, string $companyAdress, bool $isValidated, ?int $id = null)
+    public function __construct(string $phone, string $company, string $companyAdress, bool $isValidated = false, ?int $id = null)
     {
         $this->id = $id;
         $this->phone = $phone;
@@ -23,6 +23,12 @@ final class UserPro
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
     }
 
     public function getIsValidated()
