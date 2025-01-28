@@ -1,7 +1,7 @@
 {
   "name": "g404_tpsolo_fil-rouge",
   "version": "1.0.0",
-  "description": "Premier TP solo // Création d'une application web front + back pour une entreprise de vente de livre d'occasion",
+  "resum": "Premier TP solo // Création d'une application web front + back pour une entreprise de vente de livre d'occasion",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

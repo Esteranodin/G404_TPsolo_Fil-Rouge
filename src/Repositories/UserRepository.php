@@ -93,7 +93,7 @@ final class UserRepository extends DatabaseRepository
         }
     }
 
-    public function modifiedAccount(User $user, bool $newMdp = false)
+    public function modifiedAccount(User $user, bool $newMdp = false) : void
     {
         try {
 

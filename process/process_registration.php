@@ -61,7 +61,7 @@ if ($userRepo->checkMailExist($mail)) {
     exit();
 }
 
-// bouton submit du formulaire nomenclaturer "comptePro"
+// bouton submit du formulaire nomenclaturer "comptePro" pour différencier les deux boutons sur le même formulaire
 if($_POST['comptePro']) {
     if (empty($_POST['phone'])) {
         header('Location: ../public/registration.php?error=phoneMissing');
@@ -77,13 +77,13 @@ if (!empty($_POST['phone'])) {
     $userPro = new UserPro($phone, $company, $companyAdress);
 
     $userPro->setId($userRepoPro->createAccountPro($userPro));
-
     
     $user->setUserPro($userPro);
 }
 
 $user->setId($userRepo->createAccount($user));
 
+// on enregistre tout ça dans la session
 $_SESSION['user'] = $user;
 
 header('Location: ../public/homepage.php?success=newAccount');

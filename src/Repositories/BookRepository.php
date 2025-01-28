@@ -1,6 +1,6 @@
 <?php
 
-final class Bookrepository extends DatabaseRepository
+final class BookRepository extends DatabaseRepository
 {
     public function __construct()
     {
@@ -8,10 +8,26 @@ final class Bookrepository extends DatabaseRepository
     }
 
 
+    public function createBook(Book $book) : int
+    {
+        try {
+            $sql = "INSERT INTO `book`(`title`, `id_author`, `parutionAt`, `publisher`, `resum`) VALUES (:title, :idAuthor, :parutionAt, :publisher, :resum)"; 
 
+            $stmt = $this->pdo->prepare($sql);
 
-    // Méthode ici
+            $stmt->execute([
+                ':title' => $book->getTitle(),
+                ':idAuthor' => $book->getIdAuthor(),
+                ':parutionAt' => $book->getParutionAt(),
+                ':publisher' => $book->getPublisher(),
+                ':resum' => $book->getResum(),
+            ]);
 
-
-
+            // permet de recupérer le dernier id créé
+            return $this->pdo->lastInsertId();
+        } catch (PDOException $error) {
+            echo "Erreur lors de la requête : " . $error->getMessage();
+            exit;
+        }
+    }
 }

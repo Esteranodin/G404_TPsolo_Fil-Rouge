@@ -2,28 +2,40 @@
 
 ATTENTION : repartir sur du responsive notamment pour tailles des inputs
 
-ALIGNER LES ELEMENTS = ferrer a gauche
+    ALIGNER LES ELEMENTS = ferrer a gauche
 
-Le menu burger ne se ferme pas automatiquement si on clique en dehors + si on aggrandit fenêtre (=revient quand on revient a plus petit)
-+ icone filtres cachée qd menu burger ouvert
-Front search bar avce la croix pas visible 
+    Le menu burger ne se ferme pas automatiquement si on clique en dehors + si on aggrandit fenêtre (=revient quand on revient a plus petit)
+    + icone filtres cachée qd menu burger ouvert
+    Front search bar avce la croix pas visible 
 
-CENTRER titre + menu burger
-
-meilleure façon d'écrire tous les swiths de messages ? ternaire ? 
+    CENTRER titre + menu burger
 
 faire taper ancien mot de passe pour valider le nouveau ? 
-obliger d'afficher contenu du mot de passe ? en valeur de mot de passe peut etre pas le mot de passe lui meme ? (pour modif' et avoir un input non empty)
+
+titre original ? 
 
 FAIRE COMPOSANTS pour : (faire que tous les composantsdemande si session pour avoir des pages différenciées ?)
     -> card
 
 
+------------- FORM temp sur bookCreate.php
 
 TO DOING : 
 
+Faire methode + forEach pour afficher les bouquins
+
+Changer input du résumé pour plus grand
+Id auteur manuel -> commposition et objet author comme userPro pour user
 
 Passer à un profil pro depuis un profil user de base ?
+
+RESTE : 
+
+accéder au form de livre que si userPro
+a valider compte pro via admin (isValidated)
+
+
+TIPS : 
 
 en session $_SESSION['user'] = $user ;
 DONC
